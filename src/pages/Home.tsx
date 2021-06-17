@@ -24,29 +24,32 @@ const Home:React.FC = () => {
 	return (
 		<div>
 			<Navbar />
-    <div>
-      <div>
-        {data.results.map((item) => (
-          <div key={item.id}>{item.title}</div>
-        ))}
-        <button
-          onClick={() =>
-            setPageIndex(data.page > 1 ? pageIndex - 1 : pageIndex - 0)
-          }
-        >
-          Previous
-        </button>
-        <button
-          onClick={() =>
-            setPageIndex(
-              data.page < data.total_pages ? pageIndex + 1 : pageIndex + 0
-            )
-          }
-        >
-          Next
-        </button>
-      </div>
-    </div>
+			<h1 className='mt-4 text-center text-3xl'>Now Showing</h1>
+			<div className='my-4 px-3'>
+				<div>
+					{data.results.map((item) => (
+						<div key={item.id}>{item.title}</div>
+					))}
+					<div className='mt-2 flex justify-center'>
+						<button className='border w-20 py-1 px-2 bg-gray-200 mr-2'
+							onClick={() =>
+								setPageIndex(data.page > 1 ? pageIndex - 1 : pageIndex - 0)
+							}
+						>
+							Previous
+						</button>
+						<button className='border w-20 py-1 px-2 bg-gray-200'
+							onClick={() =>
+								setPageIndex(
+									data.page < data.total_pages ? pageIndex + 1 : pageIndex + 0
+								)
+							}
+						>
+							Next
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

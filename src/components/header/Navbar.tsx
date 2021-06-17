@@ -4,7 +4,7 @@ const Navbar:React.FC = () => {
 	return (
 		<>
 		<nav>
-			<ul className='flex'>
+			<ul className='flex justify-center'>
 				<li className='mr-2'>
 					<NavLink to='/'>
 						Home
