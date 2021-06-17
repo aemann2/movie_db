@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axiosGet from '../utils/axiosGet';
+import Navbar from '../components/header/Navbar';
 
-const Home = () => {
+const Home:React.FC = () => {
 	const [results, setResults] = useState({});
 	const endpoint = `movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&region=US`;
 
@@ -16,6 +17,7 @@ const Home = () => {
 	console.log(results)
 	return (
 		<div>
+			<Navbar />
 			<h1>Home</h1>
 		</div>
 	)
