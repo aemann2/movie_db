@@ -1,25 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import axiosGet from '../utils/axiosGet';
+import React from 'react';
+import useSWR from "swr";
+import { fetcher } from "../utils/fetcher"
 import Navbar from '../components/header/Navbar';
 
+interface Results {
+		id: number,
+		title: string,
+};
+
 const Item:React.FC = () => {
-	const [results, setResults] = useState({});
-	const endpoint = `movie/121?api_key=${process.env.REACT_APP_API_KEY}&&language=en-US&append_to_response`;
+	const url = `movie/121?api_key=${process.env.REACT_APP_API_KEY}&&language=en-US&append_to_response`;
 
-	useEffect(():void => {
-		const fetchData = async ():Promise<void> => {
-			const res = await axiosGet(endpoint);
-			setResults(res.data);
-		};
-		fetchData();
-	}, [endpoint])
-
-	console.log(results)
+	const { data, error } = useSWR<Results>(url, fetcher);
+  if (error) return (<div>"An error has occurred."</div>);
+  if (!data) return (<div>"Loading..."</div>);
 
 	return (
 		<div>
 			<Navbar />
-			<h1>Item</h1>
+      <div key={data.id}>{data.title}</div>
 		</div>
 	)
 }
