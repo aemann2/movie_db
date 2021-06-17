@@ -8,7 +8,7 @@ interface Results {
 		title: string,
 };
 
-const Item:React.FC = () => {
+const Item = () => {
 	const url = `movie/121?api_key=${process.env.REACT_APP_API_KEY}&&language=en-US&append_to_response`;
 
 	const { data, error } = useSWR<Results>(url, fetcher);

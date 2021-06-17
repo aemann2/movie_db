@@ -4,7 +4,7 @@ import Navbar from '../components/header/Navbar';
 import { fetcher } from "../utils/fetcher";
 import { Results } from './Home'
 
-const Search:React.FC = () => {
+const Search= () => {
 	const url = `search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=Lord%20of%20the%20Rings&page=1&include_adult=false&region=US&year&primary_release_year`;
 
 	const { data, error } = useSWR<Results>(url, fetcher);

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-const Navbar:React.FC = () => {
+const Navbar = () => {
 	return (
 		<>
 		<nav>
