@@ -1,7 +1,8 @@
 import React from 'react';
 import useSWR from "swr";
 import { fetcher } from "../utils/fetcher"
-import Navbar from '../components/header/Navbar';
+import Navbar from '../components/header/navbar/Navbar';
+import Loader from '../components/loader/Loader';
 
 interface Results {
 		id: number,
@@ -18,7 +19,10 @@ const Item = () => {
 	return (
 		<div>
 			<Navbar />
-      <div key={data.id}>{data.title}</div>
+			{data ? 
+				<div key={data.id}>{data.title}</div> 
+				: <Loader />
+			}
 		</div>
 	)
 }
