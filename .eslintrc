@@ -1,0 +1,9 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+		"indent": [1, "tab"],
+    "semi": [1, "always"],
+    "quotes": [1, "single"]
+  }
+}

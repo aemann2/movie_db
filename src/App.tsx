@@ -1,30 +1,30 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+	BrowserRouter as Router,
+	Switch,
+	Route,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import Item from './pages/Item';
 import Search from './pages/Search';
 
 
 function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/item'>
-          <Item />
-        </Route>
-        <Route path='/search'>
-          <Search />
-        </Route>
-      </Switch>
-    </Router>
-  );
+	return (
+		<Router>
+			<Switch>
+				<Route exact path='/'>
+					<Home />
+				</Route>
+				<Route path='/item'>
+					<Item />
+				</Route>
+				<Route path='/search'>
+					<Search />
+				</Route>
+			</Switch>
+		</Router>
+	);
 }
 
 export default App;

@@ -6,7 +6,7 @@ const Loader = () => {
 		<div className='flex justify-center align-center'>
 			<img src={loader} alt="loader" />
 		</div>
-	)
-}
+	);
+};
 
-export default Loader
+export default Loader;

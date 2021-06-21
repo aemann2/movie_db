@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction} from 'react'
+import React, {Dispatch, SetStateAction} from 'react';
 
 interface IProps {
 	pageIndex: number;
@@ -9,7 +9,7 @@ interface IProps {
 
 const Pagination = ({setPageIndex, pageIndex, page, total_pages}:IProps) => {
 	return (
-	<div className='mt-2 flex justify-center'>
+		<div className='mt-2 flex justify-center'>
 			<button className='border w-20 py-1 px-2 bg-gray-200 mr-2'
 				onClick={() =>
 					setPageIndex(page > 1 ? pageIndex - 1 : pageIndex - 0)
@@ -26,8 +26,8 @@ const Pagination = ({setPageIndex, pageIndex, page, total_pages}:IProps) => {
 			>
 				Next
 			</button>
-	</div>
-	)
-}
+		</div>
+	);
+};
 
 export default Pagination;
