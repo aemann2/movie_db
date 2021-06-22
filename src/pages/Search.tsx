@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import useSWR from 'swr';
 import Navbar from '../components/header/navbar/Navbar';
 import { fetcher } from '../utils/fetcher';
-import { Results } from './Home';
+import { Data } from './Home';
 import Loader from '../components/loader/Loader';
 import SearchBar from '../components/search/SearchBar';
 
@@ -11,12 +11,10 @@ const Search= () => {
 	
 	const url = `search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${search}&page=1&include_adult=false&region=US&year&primary_release_year`;
 	
-	const { data, error } = useSWR<Results>(url, fetcher);
+	const { data, error } = useSWR<Data>(url, fetcher);
 	if (error) {
 		console.log(error);	
 	}
-
-	
 
 	return (
 		<div>
