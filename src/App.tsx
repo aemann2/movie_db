@@ -7,7 +7,7 @@ import {
 import Home from './pages/Home';
 import Item from './pages/Item';
 import Search from './pages/Search';
-
+import About from './pages/About';
 
 function App() {
 	return (
@@ -16,11 +16,14 @@ function App() {
 				<Route exact path='/'>
 					<Home />
 				</Route>
-				<Route path='/item'>
+				<Route path='/:id'>
 					<Item />
 				</Route>
 				<Route path='/search'>
 					<Search />
+				</Route>
+				<Route path='/about'>
+					<About />
 				</Route>
 			</Switch>
 		</Router>

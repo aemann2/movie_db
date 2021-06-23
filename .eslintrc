@@ -1,5 +1,6 @@
 {
   "env": {
+    "browser": true,
     "node": true,
     "commonjs": true
   },
@@ -9,6 +10,9 @@
   "rules": {
 		"indent": [1, "tab"],
     "semi": [1, "always"],
-    "quotes": [1, "single"]
+    "quotes": [1, "single"],
+    "array-bracket-spacing": [1, "always"],
+    "object-curly-spacing": [1, "always"],
+    "no-unused-vars": 1
   }
 }

@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 interface IProps {
 	pageIndex: number;
@@ -7,7 +7,7 @@ interface IProps {
 	setPageIndex: Dispatch<SetStateAction<number>>;
 }
 
-const Pagination = ({setPageIndex, pageIndex, page, total_pages}:IProps) => {
+const Pagination = ({ setPageIndex, pageIndex, page, total_pages }:IProps) => {
 	return (
 		<div className='mt-2 flex justify-center'>
 			<button className='border w-20 py-1 px-2 bg-gray-200 mr-2'

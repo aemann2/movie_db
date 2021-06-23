@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../components/header/navbar/Navbar';
 import useSWR from 'swr';
 import { fetcher } from '../utils/fetcher';
 import Loader from '../components/loader/Loader';
 import Pagination from '../components/pagination/Pagination';
-import PosterCard from '../components/posterCard/PosterCard';
+import Posters from '../components/posters/Posters';
 
 export type Results = {
 	id: number,
@@ -21,7 +21,7 @@ export interface Data {
 }
 
 const Home = () => {
-	const [pageIndex, setPageIndex] = useState(1);
+	const [ pageIndex, setPageIndex ] = useState(1);
 
 	const url = `movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${pageIndex}&region=US`;
 
@@ -34,13 +34,7 @@ const Home = () => {
 			<h1 className='mt-4 text-center text-3xl'>Now Showing</h1>
 			{data ? 
 				<div className='my-4 px-3'>
-					<div>
-						{data.results.map(({id, poster_path, title, release_date, vote_average}) => (
-							<div key={id}>
-								<PosterCard id={id} poster_path={poster_path} title={title} release_date={release_date} vote_average={vote_average} />
-							</div>
-						))}
-					</div>
+					<Posters data={data}/>
 					<Pagination page={data.page} total_pages={data.total_pages} pageIndex={pageIndex} setPageIndex={setPageIndex} />
 				</div> : <Loader />}
 		</div>

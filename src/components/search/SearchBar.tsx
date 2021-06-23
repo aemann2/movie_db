@@ -1,11 +1,11 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 interface IProps {
 	setSearch: Dispatch<SetStateAction<string>>;
 }
 
-const SearchBar = ({setSearch}:IProps) => {
-	const [input, setInput] = useState('');
+const SearchBar = ({ setSearch }:IProps) => {
+	const [ input, setInput ] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
