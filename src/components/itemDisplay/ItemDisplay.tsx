@@ -1,9 +1,7 @@
 import imdb from './images/imdb.svg';
-import { Results } from '../../pages/Item';
+import { runtimeFormat } from '../../utils/helpers';
 
-const ItemDisplay = ({ id, backdrop_path, title, release_date, runtime, vote_average, overview, genres, production_companies, credits }:Results) => {
-
-	const runtimeFormat = (n) => `${n / 60 ^ 0}hrs ` + n % 60;
+const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, vote_average, overview, genres, production_companies, credits } }) => {
 
 	return (
 		<div>
@@ -39,8 +37,7 @@ const ItemDisplay = ({ id, backdrop_path, title, release_date, runtime, vote_ave
 						<div>
 							<h3>Director:</h3>
 							<p>
-								{credits.crew
-									.filter(member => member.job === 'Director')[0]['name']}
+								{credits.crew.find(member => member.job === 'Director').name}
 							</p>
 						</div>
 					</div>

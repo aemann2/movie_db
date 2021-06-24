@@ -5,17 +5,13 @@ import { fetcher } from '../utils/fetcher';
 import Loader from '../components/loader/Loader';
 import Pagination from '../components/pagination/Pagination';
 import Posters from '../components/posters/Posters';
-
-export type Results = {
+export interface Data {
+	// results: an array of objects with the following properties
 	id: number,
 	poster_path: string,
 	title: string,
 	release_date: string,
-	vote_average: number
-}
-export interface Data {
-	// results: an array of objects with the following properties
-  results: Results[];
+	vote_average: number 
 	page: number,
 	total_pages: number
 }

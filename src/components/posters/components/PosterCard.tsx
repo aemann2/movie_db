@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Results } from '../../../pages/Home';
 import imdb from './images/imdb.svg';
+interface IProps {
+	id: number,
+	poster_path: string,
+	title: string,
+	release_date: string,
+	vote_average: number
+}
 
-const PosterCard = ({ id, poster_path, title, release_date, vote_average }:Results) => {
+const PosterCard = ({ id, poster_path, title, release_date, vote_average }:IProps) => {
 
 	return (
 		<div className='mb-8 w-48'>

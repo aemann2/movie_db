@@ -1,0 +1,1 @@
+export const runtimeFormat = (n) => `${n / 60 ^ 0}hrs ` + n % 60;
