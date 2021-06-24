@@ -16,14 +16,14 @@ function App() {
 				<Route exact path='/'>
 					<Home />
 				</Route>
-				<Route path='/:id'>
-					<Item />
-				</Route>
 				<Route path='/search'>
 					<Search />
 				</Route>
 				<Route path='/about'>
 					<About />
+				</Route>
+				<Route path='/:id'>
+					<Item />
 				</Route>
 			</Switch>
 		</Router>
