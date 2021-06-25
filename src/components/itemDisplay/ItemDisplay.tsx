@@ -22,7 +22,7 @@ const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, 
 							<h3>Genre:</h3>
 							<p className='mb-2'>
 								{genres.map((genre, i) => 
-									<span>{genre.name}{i + 1 < genres.length ? ', ' : ''}</span>
+									<span key={i}>{genre.name}{i + 1 < genres.length ? ', ' : ''}</span>
 								)}
 							</p>
 						</div>

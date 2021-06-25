@@ -10,7 +10,6 @@ const SearchBar = ({ setSearch }:IProps) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setSearch(input);
-		setInput('');
 	};
 	
 	return (
