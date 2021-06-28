@@ -1,9 +1,10 @@
 import splash from './images/splash.png';
+import splash_mobile from './images/splash_mobile.png';
 
 const Splash = () => {
 	return (
 		<div>
-			<img className='block mx-auto' src={splash} alt='Theater seats' />
+			<img className='block w-full' src={splash_mobile} alt='Theater seats' />
 		</div>
 	);
 };

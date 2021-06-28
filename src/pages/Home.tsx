@@ -32,7 +32,7 @@ const Home = () => {
 	if (error) return (<div>"An error has occurred."</div>);
 
 	return (
-		<div className='bg-background text-mainText h-full'>
+		<div className='bg-background text-mainText h-full py-10 px-6'>
 			<Navbar />
 			<Splash />
 			<SearchBar setSearch={setSearch} />
