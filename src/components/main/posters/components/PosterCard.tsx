@@ -14,7 +14,7 @@ const PosterCard = ({ id, poster_path, title, release_date, vote_average }:IProp
 		<div className='mb-8 w-48'>
 			<Link to={`/${id}`}>
 				<img src={`https://image.tmdb.org/t/p/w200/${poster_path}`} alt="" />
-				<h2 className='inline'>{title}</h2>
+				<h2 className='inline '>{title}</h2>
 			</Link>
 			<p>Release Date: {release_date}</p>
 			<div className='flex'>

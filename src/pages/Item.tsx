@@ -2,8 +2,8 @@ import useSWR from 'swr';
 import { useParams } from 'react-router-dom';
 import { fetcher } from '../utils/fetcher';
 import Navbar from '../components/header/navbar/Navbar';
-import Loader from '../components/loader/Loader';
-import ItemDisplay from '../components/itemDisplay/ItemDisplay';
+import Loader from '../components/main/loader/Loader';
+import ItemDisplay from '../components/main/itemDisplay/ItemDisplay';
 export interface ItemResults {
 		id: number,
 		backdrop_path: string,
@@ -25,7 +25,7 @@ const Item = () => {
 	if (error) return (<div>"An error has occurred."</div>);
 	
 	return (
-		<div>
+		<div className='bg-background text-mainText h-screen'>
 			<Navbar />
 			{data ? <ItemDisplay data={data}/>
 				: <Loader />
