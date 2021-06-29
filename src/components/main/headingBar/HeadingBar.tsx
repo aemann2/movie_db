@@ -1,13 +1,15 @@
 
 const HeadingBar = () => {
 	return (
-		<div className='flex text-headingText'>
-			<h1 className='mt-4 text-center text-3xl'>Now Showing</h1>
-			<div className='ml-auto self-end'>
-				<span className='mr-2 cursor-pointer'>Now Showing</span>
-				<span className='cursor-pointer'>Coming Soon</span>
+		<div>
+			<div className='flex flex-col text-headingText'>
+				<h1 className='text-center text-2xl'>Now Showing</h1>
+				<div className='mx-auto self-end text-md mt-2'>
+					<span className='mr-2 font-bold hover:text-lightAttention cursor-pointer'>Now Showing</span>
+					<span className='font-bold hover:text-lightAttention cursor-pointer'>Coming Soon</span>
+				</div>
 			</div>
-			<hr />
+			<hr className='mt-3 border-1 border-mainText'/>
 		</div>
 	);
 };

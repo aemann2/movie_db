@@ -11,10 +11,10 @@ interface IProps {
 const PosterCard = ({ id, poster_path, title, release_date, vote_average }:IProps) => {
 
 	return (
-		<div className='mb-8 w-48'>
+		<div className='mb-8 w-48 font-bitter'>
 			<Link to={`/${id}`}>
 				<img src={`https://image.tmdb.org/t/p/w200/${poster_path}`} alt="" />
-				<h2 className='inline '>{title}</h2>
+				<h2 className='inline font-bitter'>{title}</h2>
 			</Link>
 			<p>Release Date: {release_date}</p>
 			<div className='flex'>

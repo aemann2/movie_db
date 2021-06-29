@@ -3,12 +3,17 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
+			fontFamily: {
+				mont: [ 'Montserrat', 'sans-serif' ],
+				bitter: [ 'Bitter', 'serif' ],
+			},	
 			colors: {
 				background: '#181A1D',
 				lightBackground: '#6B6B6B',
 				mainText: '#D5D5D5',
 				headingText: '#FFF5F4',
 				attention: '#AA3C33',
+				lightAttention: '#FB8F86'
 			},
 		},
 	},
