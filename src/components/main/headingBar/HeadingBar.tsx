@@ -4,7 +4,7 @@ const HeadingBar = () => {
 		<div>
 			<div className='flex flex-col text-headingText'>
 				<h1 className='text-center text-2xl'>Now Showing</h1>
-				<div className='mx-auto self-end text-md mt-2'>
+				<div className='flex justify-evenly text-md mt-2'>
 					<span className='mr-2 font-bold hover:text-lightAttention cursor-pointer'>Now Showing</span>
 					<span className='font-bold hover:text-lightAttention cursor-pointer'>Coming Soon</span>
 				</div>

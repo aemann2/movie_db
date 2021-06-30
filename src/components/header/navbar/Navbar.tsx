@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import filmReel from './images/filmReel.svg';
+import ReelSVG from './images/ReelSVG';
 
 const Navbar = () => {
 	return (
@@ -9,7 +9,7 @@ const Navbar = () => {
 					<div className='flex'>
 						<li className='text-4xl mx-auto'>
 							<NavLink className='flex' to='/'>
-								<img className='inline-block -mr-2 z-10' src={filmReel} alt="" /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
+								<ReelSVG className={'inline-block -mr-2 z-10 h-9 fill-current text-attention'} /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
 							</NavLink>
 						</li>
 					</div>

@@ -1,10 +1,12 @@
-import gh_logo from './images/github.svg';
+import GithubSVG from './images/GithubSVG';
 
 const Footer = () => {
 	return (
 		<div className='flex mt-5 justify-center text-headingText'>
-			<h2 className='text-2xl mr-1'>Made by Adam Mann</h2>
-			<img src={gh_logo} alt="" />
+			<h2 className='text-lg mr-1'>Made by <span className='hover:text-lightAttention'><a href="https://adam-mann.co/" target="_blank">Adam Mann</a></span></h2>
+			<a className='my-auto' href="https://adam-mann.co/" target="_blank">
+				<GithubSVG className={'h-6 fill-current text-headingText hover:text-lightAttention'}/>
+			</a>
 		</div>
 	);
 };
