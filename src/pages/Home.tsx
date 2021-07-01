@@ -38,7 +38,7 @@ const Home = () => {
 			<SearchBar setSearch={setSearch} />
 			<HeadingBar />
 			{data ? 
-				<div className='my-4 px-3'>
+				<div className='my-4'>
 					<Posters data={data}/>
 					<Pagination page={data.page} total_pages={data.total_pages} pageIndex={pageIndex} setPageIndex={setPageIndex} />
 					<Footer />
