@@ -1,4 +1,3 @@
-import splash from './images/splash.png';
 import splash_mobile from './images/splash_mobile.png';
 
 const Splash = () => {

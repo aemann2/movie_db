@@ -1,8 +1,12 @@
-import imdb from './images/imdb.svg';
 import { runtimeFormat } from '../../../utils/helpers';
+import IMDBSVG from './images/IMDBSVG';
+import { ItemData } from '../../../models/models';
 
-const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, vote_average, overview, genres, production_companies, credits } }) => {
+interface IProps {
+	data: ItemData;
+}
 
+const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, vote_average, overview, genres, production_companies, credits } }:IProps) => {
 	return (
 		<div>
 			<div className='flex flex-col justify-center text-headingText' key={id}>
@@ -13,7 +17,10 @@ const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, 
 						<p className='flex'>
 							<span>{release_date.slice(0,4)} | </span> 
 							<span>{runtimeFormat(runtime)} | </span> 
-							<span className='flex ml-2'><img src={imdb} alt="" /><span className='ml-2'>{vote_average}</span></span>
+							<span className='flex ml-2'>
+								<IMDBSVG className={'w-10'}/>
+								<span className='ml-2'>{vote_average}</span>
+							</span>
 						</p>
 						<p className='mt-3'>{overview}</p>
 					</div>

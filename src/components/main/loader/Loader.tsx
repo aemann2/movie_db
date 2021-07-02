@@ -1,10 +1,10 @@
 import React from 'react';
-import loader from './images/loader.svg';
+import LoaderSvg from './images/LoaderSVG';
 
 const Loader = () => {
 	return (
 		<div className='flex justify-center align-center'>
-			<img src={loader} alt="loader" />
+			<LoaderSvg />
 		</div>
 	);
 };

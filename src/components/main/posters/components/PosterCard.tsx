@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
 import { truncateString } from '../../../../utils/helpers';
 import IMDBSVG from './images/IMDBSVG';
+import { SearchData } from '../../../../models/models';
+
 interface IProps {
-	id: number,
-	poster_path: string,
-	title: string,
-	release_date: string,
-	vote_average: number
+	data: SearchData
 }
 
-const PosterCard = ({ id, poster_path, title, release_date, vote_average }:IProps) => {
+const PosterCard = ({ data:{ id, poster_path, title, release_date, vote_average } }:IProps) => {
 
 	return (
 		<div className='mb-8 w-28 font-bitter'>
@@ -20,7 +18,7 @@ const PosterCard = ({ id, poster_path, title, release_date, vote_average }:IProp
 			<p className='font-light text-sm mt-2'>Release: {release_date}</p>
 			<div className='flex -mt-2'>
 				<IMDBSVG className={'w-14'}/>
-				<span className='ml-4 self-center'>{vote_average}</span>
+				<span className='ml-4 self-center text-headingText'>{vote_average}</span>
 			</div>
 		</div>
 	);

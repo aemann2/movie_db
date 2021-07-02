@@ -1,4 +1,4 @@
-import SVGContainer from '../../../../misc/svgContainer/SVGContainer'; 
+import SVGContainer from '../../../misc/svgContainer/SVGContainer';
 
 interface IProps {
 	className?: string

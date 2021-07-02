@@ -9,16 +9,7 @@ import Loader from '../components/main/loader/Loader';
 import Posters from '../components/main/posters/Posters';
 import Pagination from '../components/main/pagination/Pagination';
 import Footer from '../components/footer/Footer';
-export interface Data {
-	// results: an array of objects with the following properties
-	id: number,
-	poster_path: string,
-	title: string,
-	release_date: string,
-	vote_average: number 
-	page: number,
-	total_pages: number
-}
+import { SearchData } from '../models/models';
 
 const Home = () => {
 	const [ pageIndex, setPageIndex ] = useState(1);
@@ -28,7 +19,7 @@ const Home = () => {
 
 	const searchURL = `search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${search}&page=${pageIndex}&include_adult=false&region=US&year&primary_release_year`;
 
-	const { data, error } = useSWR<Data>(search ? searchURL: url, fetcher);
+	const { data, error } = useSWR<SearchData>(search ? searchURL: url, fetcher);
 	if (error) return (<div>"An error has occurred."</div>);
 
 	return (
