@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { useParams } from 'react-router-dom';
 import { fetcher } from '../utils/fetcher';
-import Navbar from '../components/header/navbar/Navbar';
+import PageWrapper from '../components/containers/pageContainer/PageContainer';
 import Loader from '../components/main/loader/Loader';
 import ItemDisplay from '../components/main/itemDisplay/ItemDisplay';
 import { ItemData } from '../models/models';
@@ -15,10 +15,11 @@ const Item = () => {
 	
 	return (
 		<div className='bg-background text-mainText h-screen'>
-			<Navbar />
-			{data ? <ItemDisplay data={data}/>
-				: <Loader />
-			}
+			<PageWrapper>
+				{data ? <ItemDisplay data={data}/>
+					: <Loader />
+				}
+			</PageWrapper>
 		</div>
 	);
 };

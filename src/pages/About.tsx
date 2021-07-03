@@ -1,10 +1,11 @@
-import Navbar from '../components/header/navbar/Navbar';
+import PageWrapper from '../components/containers/pageContainer/PageContainer';
 
 const About = () => {
 	return (
 		<div>
-			<Navbar />
-			<h1>This is an about page</h1>
+			<PageWrapper>
+				<h1>This is an about page</h1>
+			</PageWrapper>
 		</div>
 	);
 };
