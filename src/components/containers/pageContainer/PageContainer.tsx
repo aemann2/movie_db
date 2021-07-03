@@ -6,7 +6,7 @@ interface IProps {
 	children: React.ReactElement | React.ReactElement[]
 }
 
-const PageWrapper = ({ children }:IProps) => {
+const PageContainer = ({ children }:IProps) => {
 	return (
 		<>
 			<Navbar />
@@ -16,4 +16,4 @@ const PageWrapper = ({ children }:IProps) => {
 	);
 };
 
-export default PageWrapper;
+export default PageContainer;
