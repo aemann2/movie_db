@@ -1,5 +1,6 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState, useContext } from 'react';
 import SearchIconSVG from './images/SearchIconSVG';
+import { DisplayContext } from '../../../context/DisplayContext';
 
 interface IProps {
 	setSearch: Dispatch<SetStateAction<string>>;
@@ -7,10 +8,16 @@ interface IProps {
 
 const SearchBar = ({ setSearch }:IProps) => {
 	const [ input, setInput ] = useState('');
+	const { changeList } = useContext(DisplayContext);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setSearch(input);
+		if (input) {
+			changeList('All Films');
+		} else {
+			changeList('Now Showing');
+		}
 	};
 	
 	return (
