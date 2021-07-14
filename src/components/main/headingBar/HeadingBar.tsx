@@ -8,21 +8,24 @@ interface IProps {
 }
 
 const HeadingBar = ({ comingSoon, nowShowing, setHeaderQuery }:IProps) => {
-	const { filmList, changeList } = useContext(DisplayContext);
+	const { headerText, setHeaderText, setFilmSearch, setPageIndex, setSearchInput } = useContext(DisplayContext);
 
 	const handleClick = (input) => {
+		setSearchInput('');
+		setFilmSearch('');
+		setPageIndex(1);
 		if (input === 'Now Showing') {
 			setHeaderQuery(nowShowing);
 		} else {
 			setHeaderQuery(comingSoon);
 		}
-		changeList(input);
+		setHeaderText(input);
 	};
 
 	return (
 		<div>
 			<div className='flex flex-col text-headingText'>
-				<h1 className='text-center text-2xl'>{filmList}</h1>
+				<h1 className='text-center text-2xl'>{headerText}</h1>
 				<div className='flex justify-evenly text-md mt-2'>
 					<span className='mr-2 font-bold hover:text-lightAttention cursor-pointer' onClick={() => handleClick('Now Showing')}>Now Showing</span>
 					<span className='font-bold hover:text-lightAttention cursor-pointer' onClick={() => handleClick('Coming Soon')}>Coming Soon</span>

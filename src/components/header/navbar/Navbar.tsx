@@ -1,7 +1,18 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReelSVG from './images/ReelSVG';
+import { DisplayContext } from '../../../context/DisplayContext';
 
 const Navbar = () => {
+	const { setHeaderText, setSearchInput, setFilmSearch, setPageIndex } = useContext(DisplayContext);
+
+	const resetPage = () => {
+		setHeaderText('Now Showing');
+		setSearchInput('');
+		setFilmSearch('');
+		setPageIndex(1);
+	};
+
 	return (
 		<>
 			<nav>
@@ -15,7 +26,7 @@ const Navbar = () => {
 					</div>
 					<div className='flex text-lg justify-around my-4'>
 						<li className='hover:text-lightAttention'>
-							<NavLink to='/'>
+							<NavLink onClick={() => resetPage()} to='/'>
 						Home
 							</NavLink>
 						</li>

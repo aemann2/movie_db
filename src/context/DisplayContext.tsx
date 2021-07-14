@@ -1,12 +1,10 @@
 import React, { useState, createContext } from 'react';
-import { SearchData } from '../models/models';
-export interface contextTypes {
-	setResults: React.Dispatch<SearchData[]>,
-	results: SearchData[],
-	filmList: string,
-	// eslint-disable-next-line no-unused-vars
-	changeList: (list: string) => void;
-}
+// interface contextTypes {
+// 	filmList: string,
+// 	setFilmList: React.Dispatch<React.SetStateAction<string>>,
+// 	pageIndex: number,
+// 	setPageIndex: React.Dispatch<React.SetStateAction<number>>,
+// }
 
 // for some reason this line doesn't work when I go to consume the context items...no idea why it won't work
 // export const DisplayContext = createContext<contextTypes | null>(null);
@@ -17,18 +15,20 @@ interface Props {
 }
 
 const DisplayContextProvider = (props: Props) => {
-	const [ filmList, setFilmList ] = useState('Now Showing');
+	const [ headerText, setHeaderText ] = useState('Now Showing');
+	const [ searchInput, setSearchInput ] = useState('');
+	const [ filmSearch, setFilmSearch ] = useState('');
 	const [ pageIndex, setPageIndex ] = useState(1);
 
-	const changeList = (list: string):void => {
-		setFilmList(list);
-	};
-
 	const values = {
-		filmList,
-		changeList,
+		headerText,
+		setHeaderText,
 		pageIndex,
-		setPageIndex
+		setPageIndex,
+		filmSearch,
+		setFilmSearch,
+		searchInput,
+		setSearchInput
 	};
 	
 	return (

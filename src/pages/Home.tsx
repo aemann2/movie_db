@@ -13,20 +13,19 @@ import { DisplayContext } from '../context/DisplayContext';
 import endpoints from './endpoints';
 
 const Home = () => {
-	const [ search, setSearch ] = useState('');
-	const { pageIndex } = useContext(DisplayContext);
+	const { pageIndex, filmSearch } = useContext(DisplayContext);
 	const { nowShowing, comingSoon, searchURL } = endpoints;
-
+ 
 	const [ headerQuery, setHeaderQuery ] = useState(nowShowing);
 
-	const { data, error } = useSWR<SearchData>(search ? searchURL + `&query=${search}&page=${pageIndex}`: headerQuery + `&page=${pageIndex}`, fetcher);
+	const { data, error } = useSWR<SearchData>(filmSearch ? searchURL + `&query=${filmSearch}&page=${pageIndex}`: headerQuery + `&page=${pageIndex}`, fetcher);
 	if (error) return (<div>"An error has occurred."</div>);
 
 	return (
 		<div className='bg-background text-mainText h-full py-10 px-6 font-mont min-w-min'>
 			<PageContainer>
 				<Splash />
-				<SearchBar setSearch={setSearch} />
+				<SearchBar/>
 				<HeadingBar comingSoon={comingSoon} nowShowing={nowShowing} setHeaderQuery={setHeaderQuery} />
 				{data ? 
 					<div className='my-4'>
