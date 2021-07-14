@@ -1,10 +1,21 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { DisplayContext } from '../../../context/DisplayContext';
 
-const HeadingBar = () => {
+interface IProps {
+	comingSoon: string,
+	nowShowing: string,
+	setHeaderQuery: React.Dispatch<React.SetStateAction<string>>
+}
+
+const HeadingBar = ({ comingSoon, nowShowing, setHeaderQuery }:IProps) => {
 	const { filmList, changeList } = useContext(DisplayContext);
 
 	const handleClick = (input) => {
+		if (input === 'Now Showing') {
+			setHeaderQuery(nowShowing);
+		} else {
+			setHeaderQuery(comingSoon);
+		}
 		changeList(input);
 	};
 

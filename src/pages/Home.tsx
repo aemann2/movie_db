@@ -14,11 +14,15 @@ const Home = () => {
 	const [ pageIndex, setPageIndex ] = useState(1);
 	const [ search, setSearch ] = useState('');
 
-	const url = `movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${pageIndex}&region=US`;
+	const nowShowing = `movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${pageIndex}&region=US`;
+
+	const comingSoon = `movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${pageIndex}&region=US`;
+
+	const [ headerQuery, setHeaderQuery ] = useState(nowShowing);
 
 	const searchURL = `search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${search}&page=${pageIndex}&include_adult=false&region=US&year&primary_release_year`;
 
-	const { data, error } = useSWR<SearchData>(search ? searchURL: url, fetcher);
+	const { data, error } = useSWR<SearchData>(search ? searchURL: headerQuery, fetcher);
 	if (error) return (<div>"An error has occurred."</div>);
 
 	return (
@@ -26,7 +30,7 @@ const Home = () => {
 			<PageContainer>
 				<Splash />
 				<SearchBar setSearch={setSearch} />
-				<HeadingBar />
+				<HeadingBar comingSoon={comingSoon} nowShowing={nowShowing} setHeaderQuery={setHeaderQuery} />
 				{data ? 
 					<div className='my-4'>
 						<Posters data={data}/>
