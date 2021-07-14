@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import useSWR from 'swr';
 import { fetcher } from '../utils/fetcher';
 import PageContainer from '../components/containers/pageContainer/PageContainer';
@@ -10,15 +10,14 @@ import Posters from '../components/main/posters/Posters';
 import Pagination from '../components/main/pagination/Pagination';
 import { SearchData } from '../models/models';
 import { DisplayContext } from '../context/DisplayContext';
-import endpoints from './endpoints';
 
 const Home = () => {
-	const { pageIndex, filmSearch } = useContext(DisplayContext);
-	const { nowShowing, comingSoon, searchURL } = endpoints;
- 
-	const [ headerQuery, setHeaderQuery ] = useState(nowShowing);
+	const { pageIndex, filmSearch, endpointQuery } = useContext(DisplayContext);
 
-	const { data, error } = useSWR<SearchData>(filmSearch ? searchURL + `&query=${filmSearch}&page=${pageIndex}`: headerQuery + `&page=${pageIndex}`, fetcher);
+	const { data, error } = useSWR<SearchData>(
+		filmSearch ? endpointQuery + `&query=${filmSearch}&page=${pageIndex}`: 
+			endpointQuery + `&page=${pageIndex}`, 
+		fetcher);
 	if (error) return (<div>"An error has occurred."</div>);
 
 	return (
@@ -26,7 +25,7 @@ const Home = () => {
 			<PageContainer>
 				<Splash />
 				<SearchBar/>
-				<HeadingBar comingSoon={comingSoon} nowShowing={nowShowing} setHeaderQuery={setHeaderQuery} />
+				<HeadingBar />
 				{data ? 
 					<div className='my-4'>
 						<Posters data={data}/>

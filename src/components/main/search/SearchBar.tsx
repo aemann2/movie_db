@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 import SearchIconSVG from './images/SearchIconSVG';
 import { DisplayContext } from '../../../context/DisplayContext';
+import endpoints from '../../../pages/endpoints';
 
 const SearchBar = () => {
-	const { searchInput, setSearchInput, setHeaderText, setFilmSearch, setPageIndex } = useContext(DisplayContext);
+	const { searchInput, setSearchInput, setHeaderText, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);
+	const { nowShowing, searchURL } = endpoints;
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -11,8 +13,10 @@ const SearchBar = () => {
 		setPageIndex(1);
 		if (searchInput) {
 			setHeaderText('All Films');
+			setEndpointQuery(searchURL);
 		} else {
 			setHeaderText('Now Showing');
+			setEndpointQuery(nowShowing);
 		}
 	};
 	

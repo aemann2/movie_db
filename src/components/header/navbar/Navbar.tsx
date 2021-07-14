@@ -2,15 +2,18 @@ import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReelSVG from './images/ReelSVG';
 import { DisplayContext } from '../../../context/DisplayContext';
+import endpoints from '../../../pages/endpoints';
 
 const Navbar = () => {
-	const { setHeaderText, setSearchInput, setFilmSearch, setPageIndex } = useContext(DisplayContext);
+	const { nowShowing } = endpoints;
+	const { setHeaderText, setSearchInput, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);
 
 	const resetPage = () => {
 		setHeaderText('Now Showing');
 		setSearchInput('');
 		setFilmSearch('');
 		setPageIndex(1);
+		setEndpointQuery(nowShowing);
 	};
 
 	return (

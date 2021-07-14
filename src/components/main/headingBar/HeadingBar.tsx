@@ -1,23 +1,20 @@
 import React, { useContext } from 'react';
 import { DisplayContext } from '../../../context/DisplayContext';
+import endpoints from '../../../pages/endpoints';
 
-interface IProps {
-	comingSoon: string,
-	nowShowing: string,
-	setHeaderQuery: React.Dispatch<React.SetStateAction<string>>
-}
 
-const HeadingBar = ({ comingSoon, nowShowing, setHeaderQuery }:IProps) => {
-	const { headerText, setHeaderText, setFilmSearch, setPageIndex, setSearchInput } = useContext(DisplayContext);
+const HeadingBar = () => {
+	const { headerText, setHeaderText, setFilmSearch, setPageIndex, setSearchInput, setEndpointQuery } = useContext(DisplayContext);
+	const { nowShowing, comingSoon } = endpoints;
 
 	const handleClick = (input) => {
 		setSearchInput('');
 		setFilmSearch('');
 		setPageIndex(1);
 		if (input === 'Now Showing') {
-			setHeaderQuery(nowShowing);
+			setEndpointQuery(nowShowing);
 		} else {
-			setHeaderQuery(comingSoon);
+			setEndpointQuery(comingSoon);
 		}
 		setHeaderText(input);
 	};

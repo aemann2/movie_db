@@ -1,4 +1,5 @@
 import React, { useState, createContext } from 'react';
+import endpoints from '../pages/endpoints';
 // interface contextTypes {
 // 	filmList: string,
 // 	setFilmList: React.Dispatch<React.SetStateAction<string>>,
@@ -15,7 +16,9 @@ interface Props {
 }
 
 const DisplayContextProvider = (props: Props) => {
+	const { nowShowing } = endpoints;
 	const [ headerText, setHeaderText ] = useState('Now Showing');
+	const [ endpointQuery, setEndpointQuery ] = useState(nowShowing);
 	const [ searchInput, setSearchInput ] = useState('');
 	const [ filmSearch, setFilmSearch ] = useState('');
 	const [ pageIndex, setPageIndex ] = useState(1);
@@ -23,6 +26,8 @@ const DisplayContextProvider = (props: Props) => {
 	const values = {
 		headerText,
 		setHeaderText,
+		endpointQuery,
+		setEndpointQuery,
 		pageIndex,
 		setPageIndex,
 		filmSearch,
