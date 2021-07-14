@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import SearchIconSVG from './images/SearchIconSVG';
 import { DisplayContext } from '../../../../../context/DisplayContext';
-import endpoints from '../../../../../pages/endpoints';
+import endpoints from '../../../../endpoints/endpoints';
 
 const SearchBar = () => {
 	const { searchInput, setSearchInput, setHeaderText, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);

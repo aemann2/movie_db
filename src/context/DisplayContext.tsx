@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import endpoints from '../pages/endpoints';
+import endpoints from '../components/endpoints/endpoints';
 // interface contextTypes {
 // 	filmList: string,
 // 	setFilmList: React.Dispatch<React.SetStateAction<string>>,
@@ -23,6 +23,13 @@ const DisplayContextProvider = (props: Props) => {
 	const [ filmSearch, setFilmSearch ] = useState('');
 	const [ pageIndex, setPageIndex ] = useState(1);
 
+	const resetState = () => {
+		setHeaderText('Now Showing');
+		setSearchInput('');
+		setFilmSearch('');
+		setPageIndex(1);
+	};
+
 	const values = {
 		headerText,
 		setHeaderText,
@@ -33,7 +40,8 @@ const DisplayContextProvider = (props: Props) => {
 		filmSearch,
 		setFilmSearch,
 		searchInput,
-		setSearchInput
+		setSearchInput,
+		resetState
 	};
 	
 	return (

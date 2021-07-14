@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { DisplayContext } from '../../../../context/DisplayContext';
-import endpoints from '../../../../pages/endpoints';
+import endpoints from '../../../endpoints/endpoints';
 
 
 const HeadingBar = () => {
-	const { headerText, setHeaderText, setFilmSearch, setPageIndex, setSearchInput, setEndpointQuery } = useContext(DisplayContext);
+	const { headerText, setHeaderText, setEndpointQuery, resetState } = useContext(DisplayContext);
 	const { nowShowing, comingSoon } = endpoints;
 
 	const handleClick = (input) => {
-		setSearchInput('');
-		setFilmSearch('');
-		setPageIndex(1);
+		resetState();
 		if (input === 'Now Showing') {
 			setEndpointQuery(nowShowing);
 		} else {
