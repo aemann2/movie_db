@@ -37,7 +37,7 @@ const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, 
 							<h3>Production Companies:</h3>
 							<p className='mb-2'>
 								{production_companies.map((company, i) => 
-									<span className='text-mainText'>{company.name}{i + 1 < production_companies.length ? ' | ' : ''}</span>
+									<span className='text-mainText' key={i}>{company.name}{i + 1 < production_companies.length ? ' | ' : ''}</span>
 								)}
 							</p>
 						</div>

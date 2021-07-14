@@ -7,22 +7,25 @@ import {
 import Home from './pages/Home';
 import Item from './pages/Item';
 import About from './pages/About';
+import DisplayContextProvider from './context/DisplayContext';
 
 function App() {
 	return (
-		<Router>
-			<Switch>
-				<Route exact path='/'>
-					<Home />
-				</Route>
-				<Route path='/about'>
-					<About />
-				</Route>
-				<Route path='/:id'>
-					<Item />
-				</Route>
-			</Switch>
-		</Router>
+		<DisplayContextProvider>
+			<Router>
+				<Switch>
+					<Route exact path='/'>
+						<Home />
+					</Route>
+					<Route path='/about'>
+						<About />
+					</Route>
+					<Route path='/:id'>
+						<Item />
+					</Route>
+				</Switch>
+			</Router>
+		</DisplayContextProvider>
 	);
 }
 
