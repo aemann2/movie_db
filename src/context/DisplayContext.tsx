@@ -1,17 +1,5 @@
 import React, { useState, createContext } from 'react';
-import useSWR from 'swr';
 import { SearchData } from '../models/models';
-
-const initialState = {
-	id: NaN,
-	poster_path: 'string',
-	title: '',
-	release_date: '',
-	vote_average: NaN,
-	page: NaN,
-	total_pages: NaN
-};
-
 export interface contextTypes {
 	setResults: React.Dispatch<SearchData[]>,
 	results: SearchData[],
@@ -31,17 +19,16 @@ interface Props {
 const DisplayContextProvider = (props: Props) => {
 	const [ filmList, setFilmList ] = useState('Now Showing');
 	const [ pageIndex, setPageIndex ] = useState(1);
-	const [ results, setResults ] = useState<SearchData[]>([ initialState ]);
 
 	const changeList = (list: string):void => {
 		setFilmList(list);
 	};
 
 	const values = {
-		results,
-		setResults,
 		filmList,
 		changeList,
+		pageIndex,
+		setPageIndex
 	};
 	
 	return (

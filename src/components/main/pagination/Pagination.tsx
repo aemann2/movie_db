@@ -1,13 +1,14 @@
-import { Dispatch, SetStateAction } from 'react';
+import { useContext } from 'react';
+import { DisplayContext } from '../../../context/DisplayContext';
 
 interface IProps {
-	pageIndex: number;
 	page: number;
 	total_pages: number;
-	setPageIndex: Dispatch<SetStateAction<number>>;
 }
 
-const Pagination = ({ setPageIndex, pageIndex, page, total_pages }:IProps) => {
+const Pagination = ({ page, total_pages }:IProps) => {
+	const { pageIndex, setPageIndex } = useContext(DisplayContext);
+	
 	return (
 		<div className='mt-2 flex justify-center'>
 			<button className='border w-20 py-1 px-2 bg-mainText text-background mr-2'

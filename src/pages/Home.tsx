@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import useSWR from 'swr';
 import { fetcher } from '../utils/fetcher';
 import PageContainer from '../components/containers/pageContainer/PageContainer';
@@ -9,20 +9,17 @@ import Loader from '../components/main/loader/Loader';
 import Posters from '../components/main/posters/Posters';
 import Pagination from '../components/main/pagination/Pagination';
 import { SearchData } from '../models/models';
+import { DisplayContext } from '../context/DisplayContext';
+import endpoints from './endpoints';
 
 const Home = () => {
-	const [ pageIndex, setPageIndex ] = useState(1);
 	const [ search, setSearch ] = useState('');
-
-	const nowShowing = `movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${pageIndex}&region=US`;
-
-	const comingSoon = `movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${pageIndex}&region=US`;
+	const { pageIndex } = useContext(DisplayContext);
+	const { nowShowing, comingSoon, searchURL } = endpoints;
 
 	const [ headerQuery, setHeaderQuery ] = useState(nowShowing);
 
-	const searchURL = `search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${search}&page=${pageIndex}&include_adult=false&region=US&year&primary_release_year`;
-
-	const { data, error } = useSWR<SearchData>(search ? searchURL: headerQuery, fetcher);
+	const { data, error } = useSWR<SearchData>(search ? searchURL + `&query=${search}&page=${pageIndex}`: headerQuery + `&page=${pageIndex}`, fetcher);
 	if (error) return (<div>"An error has occurred."</div>);
 
 	return (
@@ -34,7 +31,7 @@ const Home = () => {
 				{data ? 
 					<div className='my-4'>
 						<Posters data={data}/>
-						<Pagination page={data.page} total_pages={data.total_pages} pageIndex={pageIndex} setPageIndex={setPageIndex} />
+						<Pagination page={data.page} total_pages={data.total_pages} />
 					</div> : <Loader />}
 			</PageContainer>
 		</div>
