@@ -17,22 +17,18 @@ interface Props {
 
 const DisplayContextProvider = (props: Props) => {
 	const { nowShowing } = endpoints;
-	const [ headerText, setHeaderText ] = useState('Now Showing');
 	const [ endpointQuery, setEndpointQuery ] = useState(nowShowing);
 	const [ searchInput, setSearchInput ] = useState('');
 	const [ filmSearch, setFilmSearch ] = useState('');
 	const [ pageIndex, setPageIndex ] = useState(1);
 
 	const resetState = () => {
-		setHeaderText('Now Showing');
 		setSearchInput('');
 		setFilmSearch('');
 		setPageIndex(1);
 	};
 
 	const values = {
-		headerText,
-		setHeaderText,
 		endpointQuery,
 		setEndpointQuery,
 		pageIndex,

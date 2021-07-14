@@ -4,7 +4,7 @@ import { DisplayContext } from '../../../../../context/DisplayContext';
 import endpoints from '../../../../endpoints/endpoints';
 
 const SearchBar = () => {
-	const { searchInput, setSearchInput, setHeaderText, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);
+	const { searchInput, setSearchInput, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);
 	const { nowShowing, searchURL } = endpoints;
 
 	const handleSubmit = (e) => {
@@ -12,10 +12,8 @@ const SearchBar = () => {
 		setFilmSearch(searchInput);
 		setPageIndex(1);
 		if (searchInput) {
-			setHeaderText('All Films');
 			setEndpointQuery(searchURL);
 		} else {
-			setHeaderText('Now Showing');
 			setEndpointQuery(nowShowing);
 		}
 	};
