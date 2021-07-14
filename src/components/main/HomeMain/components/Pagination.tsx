@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { DisplayContext } from '../../../context/DisplayContext';
+import { DisplayContext } from '../../../../context/DisplayContext';
 
 interface IProps {
 	page: number;

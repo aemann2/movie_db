@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { truncateString } from '../../../../utils/helpers';
+import { truncateString } from '../../../../../../utils/helpers';
 import IMDBSVG from './images/IMDBSVG';
-import { SearchData } from '../../../../models/models';
+import { SearchData } from '../../../../../../models/models';
 
 interface IProps {
 	data: SearchData

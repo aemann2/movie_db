@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { DisplayContext } from '../../../context/DisplayContext';
-import endpoints from '../../../pages/endpoints';
+import { DisplayContext } from '../../../../context/DisplayContext';
+import endpoints from '../../../../pages/endpoints';
 
 
 const HeadingBar = () => {
