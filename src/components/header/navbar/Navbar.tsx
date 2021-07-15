@@ -19,7 +19,7 @@ const Navbar = () => {
 				<ul className='text-headingText'>
 					<div className='flex'>
 						<li className='text-4xl mx-auto'>
-							<NavLink className='flex' to='/'>
+							<NavLink onClick={() => resetPage()} className='flex' to='/'>
 								<ReelSVG className={'inline-block -mr-2 z-10 h-9 fill-current text-attention'} /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
 							</NavLink>
 						</li>

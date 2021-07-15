@@ -1,15 +1,18 @@
 import React, { useState, createContext } from 'react';
 import endpoints from '../components/endpoints/endpoints';
-// interface contextTypes {
-// 	filmList: string,
-// 	setFilmList: React.Dispatch<React.SetStateAction<string>>,
-// 	pageIndex: number,
-// 	setPageIndex: React.Dispatch<React.SetStateAction<number>>,
-// }
+interface contextTypes {
+	endpointQuery: string,
+	setEndpointQuery: React.Dispatch<React.SetStateAction<string>>,
+	searchInput: string,
+	setSearchInput: React.Dispatch<React.SetStateAction<string>>,
+	filmSearch: string,
+	setFilmSearch: React.Dispatch<React.SetStateAction<string>>
+	pageIndex: number,
+	setPageIndex: React.Dispatch<React.SetStateAction<number>>,
+	resetState: () => void;
+}
 
-// for some reason this line doesn't work when I go to consume the context items...no idea why it won't work
-// export const DisplayContext = createContext<contextTypes | null>(null);
-export const DisplayContext = createContext<any | null>(null);
+export const DisplayContext = createContext<contextTypes>({} as contextTypes);
 
 interface Props {
 	children: React.ReactNode;
