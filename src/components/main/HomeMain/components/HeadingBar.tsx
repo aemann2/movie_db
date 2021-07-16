@@ -1,14 +1,17 @@
 import { useContext } from 'react';
-import { DisplayContext } from '../../../../context/DisplayContext';
+import { DisplayContext } from '../../../../state/DisplayContext';
 import endpoints from '../../../endpoints/endpoints';
-
+import { paginationTypes } from '../../../../state/pagination';
+import { usePaginationState } from '../../../../state/pagination/paginationProvider';
 
 const HeadingBar = () => {
 	const { setEndpointQuery, resetState, endpointQuery } = useContext(DisplayContext);
+	const { dispatch: paginationDispatch } = usePaginationState();
 	const { nowShowing, comingSoon } = endpoints;
 
 	const handleClick = (input) => {
 		resetState();
+		paginationDispatch({ type: paginationTypes.RESET });
 		setEndpointQuery(input);
 	};
 

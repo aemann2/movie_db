@@ -1,16 +1,19 @@
 import { useContext } from 'react';
 import SearchIconSVG from './images/SearchIconSVG';
-import { DisplayContext } from '../../../../../context/DisplayContext';
+import { DisplayContext } from '../../../../../state/DisplayContext';
+import { paginationTypes } from '../../../../../state/pagination';
+import { usePaginationState } from '../../../../../state/pagination/paginationProvider';
 import endpoints from '../../../../endpoints/endpoints';
 
 const SearchBar = () => {
-	const { searchInput, setSearchInput, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);
+	const { searchInput, setSearchInput, setFilmSearch, setEndpointQuery } = useContext(DisplayContext);
+	const { dispatch: paginationDispatch } = usePaginationState();
 	const { nowShowing, searchURL } = endpoints;
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setFilmSearch(searchInput);
-		setPageIndex(1);
+		paginationDispatch({ type: paginationTypes.RESET });
 		if (searchInput) {
 			setEndpointQuery(searchURL);
 		} else {

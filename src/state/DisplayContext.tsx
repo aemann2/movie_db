@@ -1,5 +1,6 @@
 import React, { useState, createContext } from 'react';
 import endpoints from '../components/endpoints/endpoints';
+
 interface contextTypes {
 	endpointQuery: string,
 	setEndpointQuery: React.Dispatch<React.SetStateAction<string>>,
@@ -7,8 +8,6 @@ interface contextTypes {
 	setSearchInput: React.Dispatch<React.SetStateAction<string>>,
 	filmSearch: string,
 	setFilmSearch: React.Dispatch<React.SetStateAction<string>>
-	pageIndex: number,
-	setPageIndex: React.Dispatch<React.SetStateAction<number>>,
 	resetState: () => void;
 }
 
@@ -23,19 +22,15 @@ const DisplayContextProvider = (props: Props) => {
 	const [ endpointQuery, setEndpointQuery ] = useState(nowShowing);
 	const [ searchInput, setSearchInput ] = useState('');
 	const [ filmSearch, setFilmSearch ] = useState('');
-	const [ pageIndex, setPageIndex ] = useState(1);
 
 	const resetState = () => {
 		setSearchInput('');
 		setFilmSearch('');
-		setPageIndex(1);
 	};
 
 	const values = {
 		endpointQuery,
 		setEndpointQuery,
-		pageIndex,
-		setPageIndex,
 		filmSearch,
 		setFilmSearch,
 		searchInput,

@@ -8,15 +8,17 @@ import Loader from '../loader/Loader';
 import Posters from './components/posters/Posters';
 import Pagination from './components/Pagination';
 import { SearchData } from '../../../models/models';
-import { DisplayContext } from '../../../context/DisplayContext';
+import { DisplayContext } from '../../../state/DisplayContext';
+import { usePaginationState } from '../../../state/pagination/paginationProvider';
 
 
 const HomeMain = () => {
-	const { pageIndex, filmSearch, endpointQuery } = useContext(DisplayContext);
+	const { filmSearch, endpointQuery } = useContext(DisplayContext);
+	const { state: paginationState } = usePaginationState();
 
 	const { data, error } = useSWR<SearchData>(
-		filmSearch ? endpointQuery + `&query=${filmSearch}&page=${pageIndex}`: 
-			endpointQuery + `&page=${pageIndex}`, 
+		filmSearch ? endpointQuery + `&query=${filmSearch}&page=${paginationState.pageIndex}`: 
+			endpointQuery + `&page=${paginationState.pageIndex}`, 
 		fetcher);
 	if (error) return (<div>"An error has occurred."</div>);
 	return (
