@@ -1,18 +1,19 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReelSVG from './images/ReelSVG';
-import { DisplayContext } from '../../../context/DisplayContext';
-import endpoints from '../../../pages/endpoints';
+import { FilmsContext } from '../../../state/films/filmsProvider';
+import { paginationTypes } from '../../../state/pagination';
+import { usePaginationState } from '../../../state/pagination/paginationProvider';
+import endpoints from '../../endpoints/endpoints';
 
 const Navbar = () => {
 	const { nowShowing } = endpoints;
-	const { setHeaderText, setSearchInput, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);
+	const { dispatch: paginationDispatch } = usePaginationState();
+	const { setEndpointQuery, resetState } = useContext(FilmsContext);
 
 	const resetPage = () => {
-		setHeaderText('Now Showing');
-		setSearchInput('');
-		setFilmSearch('');
-		setPageIndex(1);
+		resetState();
+		paginationDispatch({ type: paginationTypes.RESET });
 		setEndpointQuery(nowShowing);
 	};
 
@@ -22,7 +23,7 @@ const Navbar = () => {
 				<ul className='text-headingText'>
 					<div className='flex'>
 						<li className='text-4xl mx-auto'>
-							<NavLink className='flex' to='/'>
+							<NavLink onClick={() => resetPage()} className='flex' to='/'>
 								<ReelSVG className={'inline-block -mr-2 z-10 h-9 fill-current text-attention'} /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
 							</NavLink>
 						</li>

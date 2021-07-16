@@ -1,21 +1,22 @@
 import { useContext } from 'react';
 import SearchIconSVG from './images/SearchIconSVG';
-import { DisplayContext } from '../../../context/DisplayContext';
-import endpoints from '../../../pages/endpoints';
+import { FilmsContext } from '../../../../../state/films/filmsProvider';
+import { paginationTypes } from '../../../../../state/pagination';
+import { usePaginationState } from '../../../../../state/pagination/paginationProvider';
+import endpoints from '../../../../endpoints/endpoints';
 
 const SearchBar = () => {
-	const { searchInput, setSearchInput, setHeaderText, setFilmSearch, setPageIndex, setEndpointQuery } = useContext(DisplayContext);
+	const { searchInput, setSearchInput, setFilmSearch, setEndpointQuery } = useContext(FilmsContext);
+	const { dispatch: paginationDispatch } = usePaginationState();
 	const { nowShowing, searchURL } = endpoints;
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setFilmSearch(searchInput);
-		setPageIndex(1);
+		paginationDispatch({ type: paginationTypes.RESET });
 		if (searchInput) {
-			setHeaderText('All Films');
 			setEndpointQuery(searchURL);
 		} else {
-			setHeaderText('Now Showing');
 			setEndpointQuery(nowShowing);
 		}
 	};

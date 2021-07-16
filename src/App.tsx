@@ -7,25 +7,28 @@ import {
 import Home from './pages/Home';
 import Item from './pages/Item';
 import About from './pages/About';
-import DisplayContextProvider from './context/DisplayContext';
+import FilmsContextProvider from './state/films/filmsProvider';
+import { PaginationProvider } from './state/pagination/paginationProvider';
 
 function App() {
 	return (
-		<DisplayContextProvider>
-			<Router>
-				<Switch>
-					<Route exact path='/'>
-						<Home />
-					</Route>
-					<Route path='/about'>
-						<About />
-					</Route>
-					<Route path='/:id'>
-						<Item />
-					</Route>
-				</Switch>
-			</Router>
-		</DisplayContextProvider>
+		<FilmsContextProvider>
+			<PaginationProvider>
+				<Router>
+					<Switch>
+						<Route exact path='/'>
+							<Home />
+						</Route>
+						<Route path='/about'>
+							<About />
+						</Route>
+						<Route path='/:id'>
+							<Item />
+						</Route>
+					</Switch>
+				</Router>
+			</PaginationProvider>
+		</FilmsContextProvider>
 	);
 }
 
