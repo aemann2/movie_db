@@ -1,10 +1,16 @@
 import React, { useContext, createContext, useReducer } from 'react';
 import { paginationReducer, initialState } from './paginationReducer';
-import { stateType } from './paginationReducer';
+interface stateTypes {
+	pageIndex: number
+}
+
+interface dispatchTypes {
+	type: 'INCREMENT_PAGE' | 'DECREMENT_PAGE' | 'RESET'
+}
 
 interface contextType {
-	state: stateType,
-	dispatch: React.Dispatch<any>
+	state: stateTypes,
+	dispatch: React.Dispatch<dispatchTypes>
 }
 
 const PaginationContext = createContext({} as contextType);

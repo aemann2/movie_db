@@ -1,9 +1,5 @@
 import * as types from './paginationTypes';
 
-export interface stateType {
-	pageIndex: number
-}
-
 export const initialState = {
 	pageIndex: 1
 };

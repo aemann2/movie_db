@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import { fetcher } from '../../../utils/fetcher';
 import Splash from '../../header/splash/Splash';
 import HeadingBar from './components/HeadingBar';
-import SearchBar from './components/search/SearchBar';
+import SearchBar from './components/searchBar/SearchBar';
 import Loader from '../loader/Loader';
 import Posters from './components/posters/Posters';
 import Pagination from './components/Pagination';
