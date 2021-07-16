@@ -1,4 +1,4 @@
-import HomeMain from '../components/main/HomeMain/HomeMain';
+import HomeMain from '../components/main/homeMain/HomeMain';
 import PageContainer from '../components/containers/pageContainer/PageContainer';
 
 const Home = () => {

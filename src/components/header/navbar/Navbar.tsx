@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReelSVG from './images/ReelSVG';
-import { DisplayContext } from '../../../state/DisplayContext';
+import { FilmsContext } from '../../../state/films/filmsProvider';
 import { paginationTypes } from '../../../state/pagination';
 import { usePaginationState } from '../../../state/pagination/paginationProvider';
 import endpoints from '../../endpoints/endpoints';
@@ -9,7 +9,7 @@ import endpoints from '../../endpoints/endpoints';
 const Navbar = () => {
 	const { nowShowing } = endpoints;
 	const { dispatch: paginationDispatch } = usePaginationState();
-	const { setEndpointQuery, resetState } = useContext(DisplayContext);
+	const { setEndpointQuery, resetState } = useContext(FilmsContext);
 
 	const resetPage = () => {
 		resetState();

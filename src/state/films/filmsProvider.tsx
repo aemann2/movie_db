@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import endpoints from '../components/endpoints/endpoints';
+import endpoints from '../../components/endpoints/endpoints';
 
 interface contextTypes {
 	endpointQuery: string,
@@ -11,13 +11,13 @@ interface contextTypes {
 	resetState: () => void;
 }
 
-export const DisplayContext = createContext<contextTypes>({} as contextTypes);
+export const FilmsContext = createContext<contextTypes>({} as contextTypes);
 
 interface Props {
 	children: React.ReactNode;
 }
 
-const DisplayContextProvider = (props: Props) => {
+const FilmsContextProvider = (props: Props) => {
 	const { nowShowing } = endpoints;
 	const [ endpointQuery, setEndpointQuery ] = useState(nowShowing);
 	const [ searchInput, setSearchInput ] = useState('');
@@ -39,10 +39,10 @@ const DisplayContextProvider = (props: Props) => {
 	};
 	
 	return (
-		<DisplayContext.Provider value={values}>
+		<FilmsContext.Provider value={values}>
 			{props.children}
-		</DisplayContext.Provider>
+		</FilmsContext.Provider>
 	);
 };
 
-export default DisplayContextProvider;
+export default FilmsContextProvider;

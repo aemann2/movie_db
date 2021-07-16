@@ -7,12 +7,12 @@ import {
 import Home from './pages/Home';
 import Item from './pages/Item';
 import About from './pages/About';
-import DisplayContextProvider from './state/DisplayContext';
+import FilmsContextProvider from './state/films/filmsProvider';
 import { PaginationProvider } from './state/pagination/paginationProvider';
 
 function App() {
 	return (
-		<DisplayContextProvider>
+		<FilmsContextProvider>
 			<PaginationProvider>
 				<Router>
 					<Switch>
@@ -28,7 +28,7 @@ function App() {
 					</Switch>
 				</Router>
 			</PaginationProvider>
-		</DisplayContextProvider>
+		</FilmsContextProvider>
 	);
 }
 

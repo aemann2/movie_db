@@ -8,12 +8,12 @@ import Loader from '../loader/Loader';
 import Posters from './components/posters/Posters';
 import Pagination from './components/Pagination';
 import { SearchData } from '../../../models/models';
-import { DisplayContext } from '../../../state/DisplayContext';
+import { FilmsContext } from '../../../state/films/filmsProvider';
 import { usePaginationState } from '../../../state/pagination/paginationProvider';
 
 
 const HomeMain = () => {
-	const { filmSearch, endpointQuery } = useContext(DisplayContext);
+	const { filmSearch, endpointQuery } = useContext(FilmsContext);
 	const { state: paginationState } = usePaginationState();
 
 	const { data, error } = useSWR<SearchData>(
