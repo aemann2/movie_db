@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetcher } from '../utils/fetcher';
 import PageContainer from '../components/containers/pageContainer/PageContainer';
 import Loader from '../components/main/loader/Loader';
-import ItemDisplay from '../components/main/itemDisplay/ItemDisplay';
+import ItemDisplay from '../components/main/itemMain/ItemDisplay';
 import { ItemData } from '../models/models';
 
 const Item = () => {
