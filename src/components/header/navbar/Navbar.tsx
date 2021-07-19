@@ -21,14 +21,14 @@ const Navbar = () => {
 		<>
 			<nav>
 				<ul className='text-headingText'>
-					<div className='flex'>
+					<div className='flex pt-8'>
 						<li className='text-4xl mx-auto'>
 							<NavLink onClick={() => resetPage()} className='flex' to='/'>
 								<ReelSVG className={'inline-block -mr-2 z-10 h-9 fill-current text-attention'} /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
 							</NavLink>
 						</li>
 					</div>
-					<div className='flex text-lg justify-around my-4'>
+					<div className='flex text-lg justify-around mt-4 mb-10 px-10'>
 						<li className='hover:text-lightAttention'>
 							<NavLink onClick={() => resetPage()} to='/'>
 						Home
