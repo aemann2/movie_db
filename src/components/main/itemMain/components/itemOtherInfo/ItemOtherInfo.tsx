@@ -13,27 +13,34 @@ interface IProps {
 
 const ItemOtherInfo = ({ genres, production_companies, credits }:IProps) => {
 	return (
-		<div className='flex justify-around items-center text-center my-10'>
+		<div className='text-center my-10'>
 			<div>
 				<h3 className='text-headingText mb-2'>Genre:</h3>
-				<p>
-					{genres.map((genre, i) => 
-						<span className='text-mainText' key={i}>{genre.name}{i + 1 < genres.length ? ', ' : ''}</span>
-					)}
-				</p>
+				<ul>
+					{genres.length > 0 ? 
+						genres.slice(0, 4).map((genre, i) => 
+							<li className='text-mainText' key={i}>{genre.name}</li>) : 
+						<li>Unknown</li>
+					}
+				</ul>
 			</div>
 			<div>
-				<h3 className='text-headingText mb-2'>Production:</h3>
-				<p>
-					{production_companies.map((company, i) => 
-						<span className='text-mainText' key={i}>{company.name}{i + 1 < production_companies.length ? ' | ' : ''}</span>
-					)}
-				</p>
+				<h3 className='text-headingText mt-4 mb-2'>Production:</h3>
+				<ul>
+					{production_companies.length > 0 ? 
+						production_companies.slice(0,3).map((company, i) => 
+							<li className='text-mainText' key={i}>{company.name}</li>) : 
+						<li>Unknown</li>
+					}
+				</ul>
 			</div>
 			<div>
-				<h3 className='text-headingText mb-2'>Director:</h3>
+				<h3 className='text-headingText mt-4 mb-2'>Director:</h3>
 				<p className='text-mainText'>
-					{credits.crew.find(member => member.job === 'Director').name}
+					{credits.crew.length > 0 ? 
+						credits.crew.find(member => member.job === 'Director').name : 
+						'Unknown'
+					}
 				</p>
 			</div>
 		</div>

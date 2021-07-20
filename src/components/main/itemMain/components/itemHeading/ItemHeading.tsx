@@ -17,12 +17,12 @@ const ItemHeading = ({ title, release_date, vote_average, runtime  }:IProps) => 
 				<span className='mr-1'>{release_date.slice(0,4)} 
 					<span className='mx-2'>|</span> 
 				</span> 
-				<span>{runtimeFormat(runtime)}
+				<span>{runtime > 0 ? runtimeFormat(runtime): 'Unknown'}
 					<span className='mx-2'>|</span>
 				</span> 
 				<span className='flex ml-1'>
 					<IMDBSVG className={'w-10 -mt-2'}/>
-					<span className='ml-2'>{vote_average}</span>
+					<span className='ml-2'>{vote_average > 0 ? vote_average: 'NR'}</span>
 				</span>
 			</p>
 		</>

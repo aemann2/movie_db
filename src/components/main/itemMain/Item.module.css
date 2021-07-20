@@ -1,0 +1,17 @@
+.bg {
+	position: relative; 
+}
+
+.bg::before {    
+		content: "";
+		background-image: url("https://image.tmdb.org/t/p/w300/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg");
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		filter: blur(16px);
+		opacity: 0.06;
+}
