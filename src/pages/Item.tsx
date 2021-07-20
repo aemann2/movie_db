@@ -14,7 +14,7 @@ const Item = () => {
 	if (error) return (<div>"An error has occurred."</div>);
 	
 	return (
-		<div className='bg-background h-full pb-7'>
+		<div className='bg-background h-full py-10'>
 			<PageContainer>
 				{data ? <ItemDisplay data={data}/>
 					: <Loader />

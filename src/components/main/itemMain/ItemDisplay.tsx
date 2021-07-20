@@ -2,7 +2,7 @@ import ItemSplash from './components/itemSpalsh/ItemSplash';
 import ItemHeading from './components/itemHeading/ItemHeading';
 import ItemOverview from './components/itemOverview/ItemOverview';
 import ItemOtherInfo from './components/itemOtherInfo/ItemOtherInfo';
-import style from './Item.module.css';
+import styled from 'styled-components';
 import { ItemData } from '../../../models/models';
 
 interface IProps {
@@ -12,7 +12,7 @@ interface IProps {
 const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, vote_average, overview, genres, production_companies, credits } }:IProps) => {
 
 	return (
-		<div className={style.bg}>
+		<BG path={backdrop_path}>
 			<div className={'flex flex-col justify-center text-mainText'} key={id}>
 				<ItemSplash backdrop_path={backdrop_path} />
 				<div>
@@ -25,8 +25,26 @@ const ItemDisplay = ({ data: { id, backdrop_path, title, release_date, runtime, 
 					</div>
 				</div>
 			</div> 
-		</div>
+		</BG>
 	);
 };
 
 export default ItemDisplay;
+
+// styled component for transparent background on item display
+const BG = styled.div `
+position: relative;
+&:before {    
+	content: "";
+	background-image: url("https://image.tmdb.org/t/p/w300/${props => props.path}");
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	filter: blur(16px);
+	opacity: 0.1;
+}
+`;
