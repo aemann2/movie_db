@@ -22,13 +22,13 @@ const Navbar = () => {
 			<nav>
 				<ul className='text-headingText'>
 					<div className='flex'>
-						<li className='text-4xl mx-auto'>
+						<li className='text-4xl mx-auto font-mont'>
 							<NavLink onClick={() => resetPage()} className='flex' to='/'>
 								<ReelSVG className={'inline-block -mr-2 z-10 h-9 fill-current text-attention'} /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
 							</NavLink>
 						</li>
 					</div>
-					<div className='flex text-lg justify-around mt-4 mb-10 px-10'>
+					<div className='flex text-lg justify-around mt-4 mb-10 px-10 font-mont'>
 						<li className='hover:text-lightAttention'>
 							<NavLink onClick={() => resetPage()} to='/'>
 						Home

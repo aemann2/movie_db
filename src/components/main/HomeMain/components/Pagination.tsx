@@ -23,7 +23,7 @@ const Pagination = ({ page, total_pages }:IProps) => {
 	
 	return (
 		<div className='mt-2 flex justify-center'>
-			<button className='border w-20 py-1 px-2 bg-mainText text-background mr-2'
+			<button className='border w-20 py-1 px-2 bg-mainText text-background mr-5'
 				onClick={handlePaginationDecrementClick}
 			>
 				Previous

@@ -28,7 +28,7 @@ const HeadingBar = () => {
 					<span className='font-bold hover:text-lightAttention cursor-pointer' onClick={() => handleClick(comingSoon)}>Coming Soon</span>
 				</div>
 			</div>
-			<hr className='mt-3 border-1 border-mainText'/>
+			<hr className='mt-3 border-1 w-11/12 mx-auto border-mainText'/>
 		</div>
 	);
 };

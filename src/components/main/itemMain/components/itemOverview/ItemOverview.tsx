@@ -1,13 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { truncateString } from '../../../../../utils/helpers';
 
-
 interface IProps {
-	overview: string
+	overview: string;
 }
 
-const ItemOverview = ({ overview  }:IProps) => {
-
+const ItemOverview = ({ overview }: IProps) => {
 	const [ overviewLength, setOverviewLength ] = useState(400);
 	const readMore = useRef<null | HTMLInputElement>(null);
 
@@ -23,10 +21,17 @@ const ItemOverview = ({ overview  }:IProps) => {
 
 	return (
 		<>
-			<p className='mt-3'>{truncateString(overview, overviewLength)}
-				{	overview.length > 400 ?
-					<span className='text-attention underline ml-2' ref={readMore} onClick={handleClick}>Read More</span> : null
-				}
+			<p className='mt-3'>
+				{truncateString(overview, overviewLength)}
+				{overview.length > 400 ? (
+					<span
+						className='text-attention underline ml-2'
+						ref={readMore}
+						onClick={handleClick}
+					>
+						Read More
+					</span>
+				) : null}
 			</p>
 		</>
 	);
