@@ -3,6 +3,8 @@ import { FilmsContext } from '../../../../state/films/filmsProvider';
 import endpoints from '../../../endpoints/endpoints';
 import { paginationTypes } from '../../../../state/pagination';
 import { usePaginationState } from '../../../../state/pagination/paginationProvider';
+// a package for conditionally styling class names
+import clsx from 'clsx';
 
 const HeadingBar = () => {
 	const { setEndpointQuery, resetState, endpointQuery } = useContext(FilmsContext);
@@ -24,8 +26,15 @@ const HeadingBar = () => {
 							'All Films'}
 				</h1>
 				<div className='flex justify-evenly text-md mt-2'>
-					<span className='mr-2 font-bold hover:text-lightAttention cursor-pointer' onClick={() => handleClick(nowShowing)}>Now Showing</span>
-					<span className='font-bold hover:text-lightAttention cursor-pointer' onClick={() => handleClick(comingSoon)}>Coming Soon</span>
+					<span className={
+						clsx('mr-2 font-bold hover:text-lightAttention cursor-pointer', 
+							endpointQuery === nowShowing ?'text-lightAttention': 'text-headingText'
+						)} onClick={() => handleClick(nowShowing)}> Now Showing
+					</span>
+					<span className={
+						clsx('mr-2 font-bold hover:text-lightAttention cursor-pointer', 
+							endpointQuery === comingSoon ? 'text-lightAttention': 'text-headingText'
+						)} onClick={() => handleClick(comingSoon)}>Coming Soon</span>
 				</div>
 			</div>
 			<hr className='mt-3 border-1 w-11/12 mx-auto border-mainText'/>

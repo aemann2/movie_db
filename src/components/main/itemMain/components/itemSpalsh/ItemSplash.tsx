@@ -1,13 +1,17 @@
 import React from 'react';
+import { srcSetUtils } from '../../../../../utils/helpers';
 
 interface IProps {
 	backdrop_path: string,
 }
 
 const ItemSplash = ({ backdrop_path }:IProps) => {
+	const { getSrcSet, backdropVariants } = srcSetUtils;
+	const src = getSrcSet(backdropVariants, backdrop_path);
+	
 	return (
-		<div style={{ height: '176px' }}>
-			<img className='w-10/12 mx-auto' src={`https://image.tmdb.org/t/p/w300/${backdrop_path}`} alt="" />
+		<div className='w-10/12 mx-auto' >
+			<img className='w-full' srcSet={src} src={backdropVariants[0].url} alt="" />
 		</div>
 	);
 };
