@@ -20,24 +20,24 @@ const HeadingBar = () => {
 	return (
 		<div>
 			<div className='flex flex-col text-headingText'>
-				<h1 className='text-center text-2xl'>
+				<h1 className='text-center text-2xl sm:text-4xl'>
 					{endpointQuery === nowShowing ? 'Now Showing' : 
 						endpointQuery === comingSoon ? 'Coming Soon' :
 							'All Films'}
 				</h1>
-				<div className='flex justify-evenly text-md mt-2'>
+				<div className='flex justify-evenly text-md mt-2 sm:mt-6'>
 					<span className={
-						clsx('mr-2 font-bold hover:text-lightAttention cursor-pointer', 
-							endpointQuery === nowShowing ?'text-lightAttention': 'text-headingText'
+						clsx('mr-2 sm:text-2xl font-bold hover:text-lightAttention cursor-pointer', 
+							endpointQuery === nowShowing ?'text-lightAttention underline': 'text-headingText'
 						)} onClick={() => handleClick(nowShowing)}> Now Showing
 					</span>
 					<span className={
-						clsx('mr-2 font-bold hover:text-lightAttention cursor-pointer', 
-							endpointQuery === comingSoon ? 'text-lightAttention': 'text-headingText'
+						clsx('mr-2 sm:text-2xl font-bold hover:text-lightAttention cursor-pointer', 
+							endpointQuery === comingSoon ? 'text-lightAttention underline': 'text-headingText'
 						)} onClick={() => handleClick(comingSoon)}>Coming Soon</span>
 				</div>
 			</div>
-			<hr className='mt-3 border-1 w-11/12 mx-auto border-mainText'/>
+			<hr className='mt-3 sm:mt-8 border-1 w-11/12 mx-auto border-mainText'/>
 		</div>
 	);
 };

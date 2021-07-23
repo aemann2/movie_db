@@ -43,11 +43,7 @@ export const srcSetUtils = {
 
 	posterVariants: [
 		{
-			url: 'https://image.tmdb.org/t/p/w185/',
-			width: 640
-		},
-		{
-			url: 'https://image.tmdb.org/t/p/w300/',
+			url: 'https://image.tmdb.org/t/p/w342/',
 			width: 770
 		},
 		{
