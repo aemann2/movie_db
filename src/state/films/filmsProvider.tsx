@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import endpoints from '../../components/endpoints/endpoints';
+import endpoints from '../../utils/endpoints/endpoints';
 
 interface contextTypes {
 	endpointQuery: string,

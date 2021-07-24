@@ -4,7 +4,7 @@ import ReelSVG from './images/ReelSVG';
 import { FilmsContext } from '../../../state/films/filmsProvider';
 import { paginationTypes } from '../../../state/pagination';
 import { usePaginationState } from '../../../state/pagination/paginationProvider';
-import endpoints from '../../endpoints/endpoints';
+import endpoints from '../../../utils/endpoints/endpoints';
 
 const Navbar = () => {
 	const { nowShowing } = endpoints;

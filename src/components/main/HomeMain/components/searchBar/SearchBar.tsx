@@ -3,7 +3,7 @@ import SearchIconSVG from './images/SearchIconSVG';
 import { FilmsContext } from '../../../../../state/films/filmsProvider';
 import { paginationTypes } from '../../../../../state/pagination';
 import { usePaginationState } from '../../../../../state/pagination/paginationProvider';
-import endpoints from '../../../../endpoints/endpoints';
+import endpoints from '../../../../../utils/endpoints/endpoints';
 
 const SearchBar = () => {
 	const { searchInput, setSearchInput, setFilmSearch, setEndpointQuery } = useContext(FilmsContext);
@@ -22,7 +22,7 @@ const SearchBar = () => {
 	};
 	
 	return (
-		<div className='text-center my-5 flex justify-center'>
+		<div className='text-center my-5 mx-auto flex justify-center max-w-5xl'>
 			<form onSubmit={handleSubmit} className='border border-mainText py-2 px-2 flex w-11/12 rounded-xl'>
 				<SearchIconSVG className='h-5 sm:h-10 my-auto mr-2' />
 				<input className="text-sm sm:text-xl bg-background placeholder-headingText w-9/12 pl-2" type='text' value={searchInput} placeholder="Search All Films..." onChange={(e) => setSearchInput(e.target.value)} />
