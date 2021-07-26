@@ -19,8 +19,8 @@ const HeadingBar = () => {
 
 	return (
 		<>
-			<div className='flex flex-col lg:flex-row lg:justify-between max-w-7xl text-headingText'>
-				<h1 className='text-center text-2xl sm:text-4xl lg:text-5xl'>
+			<div className='flex flex-col lg:flex-row lg:justify-between lg:mx-auto lg:px-8 lg:my-10 max-w-6xl text-headingText'>
+				<h1 className='text-center text-2xl sm:text-4xl lg:text-5xl lg:self-end'>
 					{endpointQuery === nowShowing ? 'Now Showing' : 
 						endpointQuery === comingSoon ? 'Coming Soon' :
 							'All Films'}
@@ -32,7 +32,7 @@ const HeadingBar = () => {
 						)} onClick={() => handleClick(nowShowing)}> Now Showing
 					</span>
 					<span className={
-						clsx('mr-2 sm:text-2xl lg:text-3xl font-bold hover:text-lightAttention cursor-pointer', 
+						clsx('mr-2 sm:text-2xl lg:text-3xl lg:ml-5 font-bold hover:text-lightAttention cursor-pointer', 
 							endpointQuery === comingSoon ? 'text-lightAttention underline': 'text-headingText'
 						)} onClick={() => handleClick(comingSoon)}>Coming Soon</span>
 				</div>

@@ -21,6 +21,7 @@ const HomeMain = () => {
 			endpointQuery + `&page=${paginationState.pageIndex}`, 
 		fetcher);
 	if (error) return (<div>"An error has occurred."</div>);
+	
 	return (
 		<>
 			<Splash />
@@ -29,7 +30,8 @@ const HomeMain = () => {
 			{data ? 
 				<div className='my-4'>
 					<Posters data={data}/>
-					<Pagination page={data.page} total_pages={data.total_pages} />
+					{data.total_pages && <Pagination page={data.page} total_pages={data.total_pages} />
+					}
 				</div> : <Loader />}
 		</>
 	);

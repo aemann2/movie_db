@@ -19,29 +19,31 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav>
+			<nav className='max-w-7xl mx-auto lg:px-9 lg:mb-8'>
 				<ul className='text-headingText'>
-					<div className='flex'>
-						<li className='text-4xl sm:text-6xl mx-auto font-mont'>
-							<NavLink onClick={() => resetPage()} className='flex' to='/'>
-								<ReelSVG className={'inline-block -mr-2 sm:-mr-4 z-10 h-9 sm:h-14 fill-current text-attention'} /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
-							</NavLink>
-						</li>
-					</div>
-					<div className='flex text-lg sm:text-3xl justify-around mt-4 mb-10 px-10 font-mont'>
-						<li className='hover:text-lightAttention'>
-							<NavLink onClick={() => resetPage()} to='/'>
+					<div className='lg:flex lg:justify-between'>
+						<div className='flex'>
+							<li className='text-4xl sm:text-6xl lg:text-5xl mx-auto font-mont'>
+								<NavLink onClick={() => resetPage()} className='flex' to='/'>
+									<ReelSVG className={'inline-block -mr-2 sm:-mr-4 z-10 h-9 sm:h-14 lg:h-12 fill-current text-attention'} /><span>Movie<span className='text-attention font-bold'>Finder</span></span>
+								</NavLink>
+							</li>
+						</div>
+						<div className='flex text-lg sm:text-3xl justify-around mt-4 mb-10 lg:m-0 px-10 font-mont'>
+							<li className='hover:text-lightAttention lg:font-bold'>
+								<NavLink onClick={() => resetPage()} to='/'>
 						Home
-							</NavLink>
-						</li>
-						<li className='hover:text-lightAttention'>
-							<NavLink to='/about'>
+								</NavLink>
+							</li>
+							<li className='hover:text-lightAttention lg:ml-8 lg:font-bold'>
+								<NavLink to='/about'>
 							About
-							</NavLink>
-						</li>
-						<li className='hover:text-lightAttention'>
-							<a href="https://www.themoviedb.org/" target='_blank'>MovieDB</a>
-						</li>
+								</NavLink>
+							</li>
+							<li className='hover:text-lightAttention lg:ml-8 lg:font-bold'>
+								<a href="https://www.themoviedb.org/" target='_blank'>MovieDB</a>
+							</li>
+						</div>
 					</div>
 				</ul>
 			</nav>

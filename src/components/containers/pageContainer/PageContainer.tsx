@@ -8,11 +8,11 @@ interface IProps {
 
 const PageContainer = ({ children }:IProps) => {
 	return (
-		<>
+		<div style={{ minWidth: '310px' }}>
 			<Navbar />
 			{children}
 			<Footer />
-		</>
+		</div>
 	);
 };
 
