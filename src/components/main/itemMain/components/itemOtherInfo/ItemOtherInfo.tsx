@@ -13,7 +13,7 @@ interface IProps {
 
 const ItemOtherInfo = ({ genres, production_companies, credits }:IProps) => {
 	return (
-		<div className='text-center my-10'>
+		<div className='text-center my-10 md:mx-3 lg:text-lg'>
 			<div>
 				<h3 className='text-headingText mb-2'>Genre:</h3>
 				<ul>

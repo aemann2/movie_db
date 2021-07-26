@@ -28,15 +28,17 @@ const ItemDisplay = ({
 			<div className={'flex flex-col justify-center text-mainText relative'} key={id}>
 				<ItemSplash backdrop_path={backdrop_path} />
 				<div>
-					<div className='flex w-3/4 mx-auto'>
-						<div>
-							<ItemHeading
-								title={title}
-								release_date={release_date}
-								runtime={runtime}
-								vote_average={vote_average}
-							/>
-							<ItemOverview overview={overview} />
+					<div className='w-3/4 mx-auto'>
+						<div className='md:flex md:justify-center lg:justify-between max-w-3xl mx-auto'>
+							<div className='md:flex md:flex-col'>
+								<ItemHeading
+									title={title}
+									release_date={release_date}
+									runtime={runtime}
+									vote_average={vote_average}
+								/>
+								<ItemOverview overview={overview} />
+							</div>
 							<ItemOtherInfo
 								genres={genres}
 								production_companies={production_companies}

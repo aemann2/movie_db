@@ -10,7 +10,7 @@ const ItemSplash = ({ backdrop_path }:IProps) => {
 	const src = getSrcSet(backdropVariants, backdrop_path);
 
 	return (
-		<div className='w-10/12 mx-auto' >
+		<div className='w-10/12 mx-auto max-w-7xl' >
 			{
 				backdrop_path ? <img className='w-full' srcSet={src} src={backdropVariants[0].url} alt="" /> : <div className='h-32'></div>
 			}

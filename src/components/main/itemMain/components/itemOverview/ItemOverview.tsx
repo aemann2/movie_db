@@ -20,8 +20,8 @@ const ItemOverview = ({ overview }: IProps) => {
 	};
 
 	return (
-		<>
-			<p className='mt-3'>
+		<div className='flex max-w-xl'>
+			<p className='mt-3 lg:text-xl'>
 				{truncateString(overview, overviewLength)}
 				{overview.length > 400 ? (
 					<span
@@ -33,7 +33,7 @@ const ItemOverview = ({ overview }: IProps) => {
 					</span>
 				) : null}
 			</p>
-		</>
+		</div>
 	);
 };
 

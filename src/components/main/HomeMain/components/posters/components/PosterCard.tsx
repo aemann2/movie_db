@@ -21,7 +21,7 @@ const PosterCard = ({ data:{ id, poster_path, title, release_date, vote_average 
 				<h2 className='font-bitter font-bold sm:text-2xl text-headingText'>{truncateString(title, 30)}</h2>
 			</Link>
 			<p className='font-light text-sm sm:text-lg mt-2'>Release: {release_date}</p>
-			<div className='flex -mt-2'>
+			<div className='flex -mt-2 items-start'>
 				<IMDBSVG className={'w-14 sm:w-20'}/>
 				<span className='ml-4 sm:text-2xl self-center text-headingText'>{vote_average}</span>
 			</div>
