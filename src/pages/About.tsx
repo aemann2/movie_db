@@ -1,10 +1,11 @@
 import PageContainer from '../components/containers/pageContainer/PageContainer';
+import AboutMain from '../components/main/aboutMain/AboutMain';
 
 const About = () => {
 	return (
-		<div>
+		<div className='bg-background text-mainText h-full py-10 font-mont'>
 			<PageContainer>
-				<h1>This is an about page</h1>
+				<AboutMain />
 			</PageContainer>
 		</div>
 	);

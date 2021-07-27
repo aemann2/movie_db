@@ -1,3 +1,26 @@
+# [Movie Finder]()
+
+<a href="" target="_blank"><img src='' alt='Movie Finder'></a>
+
+**Movie Finder** is an app that pulls movie information from [The MovieDB API](https://developers.themoviedb.org/3/getting-started/introduction). The app displays films that are currently in theaters or coming soon. Users can also search to get info on other films.
+
+This was my first time using Typescript, so the time it took to create this app was a lot longer than I expected! I was, however, able to catch several errors before the app went into production (mostly having to do with data returned from the API).
+
+I'd had lukewarm feelings about Tailwind before this, but now having used it in a React project I can see the value of not having to flip back and forth between stylesheets. I still think I prefer CSS given the choice, but I can definitely see why the framework is gaining in popularity. As for working with the API, I loved using SWR and now find it preferable to useEffect for RestAPI calls. No more debugging dependency arrays! And it makes pagination so easy.
+
+## Technology:
+
+React, Tailwind, Typescript, SWR, Framer Motion, Context API w/ Hooks, Netlify
+
+## What I learned or used for the first time
+
+- Typescript
+- Tailwind (for a React project)
+- Framer Motion
+- SWR for data retrieval and pagination
+- Styled components (to style the background on the item record page)
+- The srcSet attribute for images, which makes responsive image resizing MUCH easier
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
