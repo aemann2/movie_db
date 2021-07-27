@@ -27,12 +27,12 @@ const HeadingBar = () => {
 				</h1>
 				<div className='flex justify-evenly mt-2 sm:mt-6'>
 					<span className={
-						clsx('mr-2 sm:text-2xl lg:text-3xl font-bold hover:text-lightAttention cursor-pointer', 
+						clsx('heading-btn', 
 							endpointQuery === nowShowing ?'text-lightAttention underline': 'text-headingText'
 						)} onClick={() => handleClick(nowShowing)}> Now Showing
 					</span>
 					<span className={
-						clsx('mr-2 sm:text-2xl lg:text-3xl lg:ml-5 font-bold hover:text-lightAttention cursor-pointer', 
+						clsx('heading-btn lg:ml-5', 
 							endpointQuery === comingSoon ? 'text-lightAttention underline': 'text-headingText'
 						)} onClick={() => handleClick(comingSoon)}>Coming Soon</span>
 				</div>

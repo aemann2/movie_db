@@ -30,17 +30,17 @@ const Navbar = () => {
 							</li>
 						</div>
 						<div className='flex text-lg sm:text-3xl justify-around mt-4 mb-10 lg:m-0 px-10 font-mont'>
-							<li className='hover:text-lightAttention lg:font-bold'>
+							<li className='navbar-link'>
 								<NavLink onClick={() => resetPage()} to='/'>
 						Home
 								</NavLink>
 							</li>
-							<li className='hover:text-lightAttention lg:ml-8 lg:font-bold'>
+							<li className='navbar-link lg:ml-8'>
 								<NavLink to='/about'>
 							About
 								</NavLink>
 							</li>
-							<li className='hover:text-lightAttention lg:ml-8 lg:font-bold'>
+							<li className='navbar-link lg:ml-8'>
 								<a href="https://www.themoviedb.org/" target='_blank'>MovieDB</a>
 							</li>
 						</div>

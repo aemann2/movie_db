@@ -22,17 +22,22 @@ const Pagination = ({ page, total_pages }:IProps) => {
 	};
 	
 	return (
-		<div className='mt-2 flex justify-center'>
-			<button className='border w-20 sm:w-40 sm:text-2xl py-1 bg-mainText text-background mr-5'
-				onClick={handlePaginationDecrementClick}
-			>
+		<div>
+			<div className='mt-2 flex justify-center'>
+				<button className='pagination-btn mr-5'
+					onClick={handlePaginationDecrementClick}
+				>
 				Previous
-			</button>
-			<button className='border w-20 sm:w-40 sm:text-2xl py-1 bg-mainText text-background'
-				onClick={handlePaginationIncrementClick}
-			>
+				</button>
+				<button className='pagination-btn'
+					onClick={handlePaginationIncrementClick}
+				>
 				Next
-			</button>
+				</button>
+			</div>
+			<div className='flex justify-center'>
+				<p className='text-lg lg:text-2xl mt-4'>Page {page} of {total_pages}</p>
+			</div>
 		</div>
 	);
 };
