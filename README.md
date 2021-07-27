@@ -1,6 +1,6 @@
-# [Movie Finder]()
+# [Movie Finder](https://movie-finder-moviedb.netlify.app/)
 
-<a href="" target="_blank"><img src='https://user-images.githubusercontent.com/68879246/127076518-db8fde22-deb7-4778-afc3-5a293e7f0ed4.png' alt='Movie Finder'></a>
+<a href="https://movie-finder-moviedb.netlify.app/" target="_blank"><img src='https://user-images.githubusercontent.com/68879246/127076518-db8fde22-deb7-4778-afc3-5a293e7f0ed4.png' alt='Movie Finder'></a>
 
 **Movie Finder** is an app that pulls movie information from [The MovieDB API](https://developers.themoviedb.org/3/getting-started/introduction). The app displays films that are currently in theaters or coming soon. Users can also search to get info on other films.
 
