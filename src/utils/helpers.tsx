@@ -8,6 +8,10 @@ export function truncateString(string:string, max:number) {
 	}
 }
 
+export const isDecimal = (n) => {
+	return n % 1 !== 0 ?  n : n.toFixed(1);
+};
+
 // image resolution switching function taken from this blog:
 // https://crystallize.com/blog/react-image-sizes-attribute-for-fast-ecommerce
 interface Variants {

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { truncateString } from '../../../../../../utils/helpers';
 import IMDBSVG from './images/IMDBSVG';
 import { SearchData } from '../../../../../../models/models';
-import { srcSetUtils } from '../../../../../../utils/helpers';
+import { srcSetUtils, isDecimal } from '../../../../../../utils/helpers';
 import { motion } from 'framer-motion';
 
 interface IProps {
@@ -32,7 +32,7 @@ const PosterCard = ({ data:{ id, poster_path, title, release_date, vote_average 
 			<p className='font-light text-sm sm:text-lg mt-2'>Release: {release_date}</p>
 			<div className='flex -mt-2 items-start'>
 				<IMDBSVG className={'w-14 sm:w-20'}/>
-				<span className='ml-4 sm:text-2xl self-center text-headingText'>{vote_average}</span>
+				<span className='ml-4 sm:text-2xl self-center text-headingText'>{vote_average > 0 ? isDecimal(vote_average): 'NR'}</span>
 			</div>
 		</motion.div>
 	);
