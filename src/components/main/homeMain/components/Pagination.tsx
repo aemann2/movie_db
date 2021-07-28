@@ -18,12 +18,17 @@ const Pagination = ({ page, total_pages }:IProps) => {
 	const { dispatch: paginationDispatch } = usePaginationState();
 
 	const handlePaginationIncrementClick = () => {
+		const anchor = document.querySelector('#search');
+		anchor!.scrollIntoView();
+
 		if (page < total_pages) {
 			paginationDispatch({ type: paginationTypes.INCREMENT_PAGE });
 		}
 	};
 
 	const handlePaginationDecrementClick = () => {
+		const anchor = document.querySelector('#search');
+		anchor!.scrollIntoView();
 		if (page > 1) {
 			paginationDispatch({ type: paginationTypes.DECREMENT_PAGE });
 		}

@@ -4,6 +4,7 @@ import ItemOverview from './components/itemOverview/ItemOverview';
 import ItemOtherInfo from './components/itemOtherInfo/ItemOtherInfo';
 import styled from 'styled-components';
 import { ItemData } from '../../../models/models';
+import { motion } from 'framer-motion';
 
 interface IProps {
 	data: ItemData;
@@ -25,7 +26,7 @@ const ItemDisplay = ({
 }: IProps) => {
 	return (
 		<BG path={backdrop_path}>
-			<div className={'flex flex-col justify-center text-mainText relative'} key={id}>
+			<motion.div className={'flex flex-col justify-center text-mainText relative'} key={id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
 				<ItemSplash backdrop_path={backdrop_path} />
 				<div>
 					<div className='w-3/4 mx-auto'>
@@ -47,7 +48,7 @@ const ItemDisplay = ({
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</BG>
 	);
 };

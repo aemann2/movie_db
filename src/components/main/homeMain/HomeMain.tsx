@@ -10,6 +10,7 @@ import Pagination from './components/Pagination';
 import { SearchData } from '../../../models/models';
 import { FilmsContext } from '../../../state/films/filmsProvider';
 import { usePaginationState } from '../../../state/pagination/paginationProvider';
+import { motion } from 'framer-motion';
 
 
 const HomeMain = () => {
@@ -23,7 +24,7 @@ const HomeMain = () => {
 	if (error) return (<div>"An error has occurred."</div>);
 	
 	return (
-		<>
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
 			<Splash />
 			<SearchBar/>
 			<HeadingBar />
@@ -33,7 +34,7 @@ const HomeMain = () => {
 					{data.total_pages && <Pagination page={data.page} total_pages={data.total_pages} />
 					}
 				</div> : <Loader />}
-		</>
+		</motion.div>
 	);
 };
 
