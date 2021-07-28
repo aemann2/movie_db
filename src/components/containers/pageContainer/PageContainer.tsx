@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../header/navbar/Navbar';
 import Footer from '../../footer/Footer';
 
 interface IProps {
@@ -9,7 +8,7 @@ interface IProps {
 const PageContainer = ({ children }:IProps) => {
 	return (
 		<div style={{ minWidth: '310px' }} className='min-h-screen'>
-			<Navbar />
+			{/* <Navbar /> */}
 			{children}
 			<Footer />
 		</div>

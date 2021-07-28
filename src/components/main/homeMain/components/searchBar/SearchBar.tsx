@@ -22,7 +22,7 @@ const SearchBar = () => {
 	};
 	
 	return (
-		<div className='text-center my-5 mx-auto flex justify-center max-w-5xl lg:my-10'>
+		<div className='text-center my-5 mx-auto flex justify-center max-w-5xl lg:my-10' id='search'>
 			<form onSubmit={handleSubmit} className='border border-mainText py-2 px-2 flex w-11/12 lg:w-9/12 xl:w-10/12 lg:border-2 rounded-xl lg:rounded-2xl'>
 				<SearchIconSVG className='h-5 sm:h-10 my-auto mr-2' />
 				<input className="text-sm sm:text-xl lg:text-3xl bg-background placeholder-headingText xs:w-8/12 sm:w-9/12 lg:py-3 pl-2" type='text' value={searchInput} placeholder="Search All Films..." onChange={(e) => setSearchInput(e.target.value)} />

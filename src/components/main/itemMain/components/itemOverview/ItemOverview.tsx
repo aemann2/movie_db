@@ -25,7 +25,7 @@ const ItemOverview = ({ overview }: IProps) => {
 				{truncateString(overview, overviewLength)}
 				{overview.length > 400 ? (
 					<span
-						className='text-attention underline ml-2'
+						className='text-attention underline ml-2 cursor-pointer'
 						ref={readMore}
 						onClick={handleClick}
 					>
