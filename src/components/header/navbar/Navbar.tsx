@@ -19,9 +19,9 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav className='max-w-7xl mx-auto lg:px-9 lg:mb-8'>
+			<nav className='bg-background'>
 				<ul className='text-headingText'>
-					<div className='lg:flex lg:justify-between'>
+					<div className='lg:flex lg:justify-between max-w-7xl mx-auto lg:px-9 pt-10'>
 						<div className='flex'>
 							<li className='text-4xl sm:text-6xl lg:text-5xl mx-auto font-mont'>
 								<NavLink onClick={() => resetPage()} className='flex' to='/'>
@@ -29,7 +29,7 @@ const Navbar = () => {
 								</NavLink>
 							</li>
 						</div>
-						<div className='flex text-lg sm:text-3xl justify-around mt-4 mb-10 lg:m-0 px-10 font-mont'>
+						<div className='flex text-lg sm:text-3xl justify-around mt-4 lg:m-0 px-10 font-mont'>
 							<li className='navbar-link'>
 								<NavLink onClick={() => resetPage()} to='/'>
 						Home

@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Item from './pages/Item';
 import About from './pages/About';
 import FilmsContextProvider from './state/films/filmsProvider';
+import Navbar from './components/header/navbar/Navbar';
 import { PaginationProvider } from './state/pagination/paginationProvider';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 		<FilmsContextProvider>
 			<PaginationProvider>
 				<Router>
+					<Navbar />
 					<Switch>
 						<Route exact path='/'>
 							<Home />
