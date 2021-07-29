@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import ItemSplash from './components/itemSpalsh/ItemSplash';
 import ItemHeading from './components/itemHeading/ItemHeading';
 import ItemOverview from './components/itemOverview/ItemOverview';
@@ -24,6 +25,12 @@ const ItemDisplay = ({
 		credits,
 	},
 }: IProps) => {
+
+	// scroll to top of page on load
+	useEffect(() => {
+		window.scrollTo(0,0);
+	}, []);
+
 	return (
 		<BG path={backdrop_path}>
 			<motion.div className={'flex flex-col justify-center text-mainText relative'} key={id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>

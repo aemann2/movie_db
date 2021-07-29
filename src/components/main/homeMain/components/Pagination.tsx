@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 interface IProps {
 	page: number;
 	total_pages: number;
+	paginationScroll: () => void;
 }
 
 const hoverVariants = {
@@ -14,22 +15,19 @@ const hoverVariants = {
 	},
 };
 
-const Pagination = ({ page, total_pages }:IProps) => {
+const Pagination = ({ page, total_pages, paginationScroll }:IProps) => {
 	const { dispatch: paginationDispatch } = usePaginationState();
 
 	const handlePaginationIncrementClick = () => {
-		const anchor = document.querySelector('#search');
-		anchor!.scrollIntoView();
-
 		if (page < total_pages) {
+			paginationScroll();
 			paginationDispatch({ type: paginationTypes.INCREMENT_PAGE });
 		}
 	};
 
 	const handlePaginationDecrementClick = () => {
-		const anchor = document.querySelector('#search');
-		anchor!.scrollIntoView();
 		if (page > 1) {
+			paginationScroll();
 			paginationDispatch({ type: paginationTypes.DECREMENT_PAGE });
 		}
 	};
