@@ -8,7 +8,7 @@ export function truncateString(string:string, max:number) {
 	}
 }
 
-export const isDecimal = (n) => {
+export const addDecimal = (n) => {
 	return n % 1 !== 0 ?  n : n.toFixed(1);
 };
 

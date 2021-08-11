@@ -1,5 +1,5 @@
 import React from 'react';
-import { runtimeFormat, isDecimal } from '../../../../../utils/helpers';
+import { runtimeFormat, addDecimal } from '../../../../../utils/helpers';
 import IMDBSVG from '../../images/IMDBSVG';
 
 interface IProps {
@@ -22,7 +22,7 @@ const ItemHeading = ({ title, release_date, vote_average, runtime  }:IProps) => 
 				</span> 
 				<span className='flex ml-1'>
 					<IMDBSVG className={'w-10 -mt-2 self-start'}/>
-					<span className='ml-2'>{vote_average > 0 ? isDecimal(vote_average): 'NR'}</span>
+					<span className='ml-2'>{vote_average > 0 ? addDecimal(vote_average): 'NR'}</span>
 				</span>
 			</p>
 		</div>
