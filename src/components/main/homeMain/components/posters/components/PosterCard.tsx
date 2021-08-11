@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { truncateString } from '../../../../../../utils/helpers';
 import IMDBSVG from './images/IMDBSVG';
 import { SearchData } from '../../../../../../models/models';
-import { srcSetUtils, addDecimal } from '../../../../../../utils/helpers';
+import { addDecimal } from '../../../../../../utils/helpers';
 import { motion } from 'framer-motion';
 
 interface IProps {
@@ -18,14 +18,17 @@ const hoverVariants = {
 };
 
 const PosterCard = ({ data:{ id, poster_path, title, release_date, vote_average } }:IProps) => {
-	const { getSrcSet, posterVariants } = srcSetUtils;
-	const src = getSrcSet(posterVariants, poster_path);
 
 	return (
 		<motion.div className='mb-8 w-full font-bitter' variants={hoverVariants} whileHover='hover'>
 			<Link to={`/${id}`}>
 				{
-					poster_path ? <img className='mb-2' srcSet={src} src={posterVariants[0].url} alt="" /> : <p className='w-32 sm:w-48 h-44 sm:h-80 text-2xl text-center flex items-center'>No image available</p>
+					poster_path ?  
+						<picture>
+							<source media="(max-width: 1019px)" srcSet={`https://image.tmdb.org/t/p/w154/${poster_path}`}></source>
+							<source media="(min-width: 1020px)" srcSet={`https://image.tmdb.org/t/p/w300/${poster_path}`}></source>
+							<img className='mb-2' src={`https://image.tmdb.org/t/p/w342/${poster_path}`} alt={title} />
+						</picture>: <p className='w-32 sm:w-48 h-44 sm:h-80 text-2xl text-center flex items-center'>No image available</p>
 				}
 				<h2 className='font-bitter font-bold sm:text-2xl text-headingText'>{truncateString(title, 30)}</h2>
 			</Link>

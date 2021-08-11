@@ -12,49 +12,5 @@ export const addDecimal = (n) => {
 	return n % 1 !== 0 ?  n : n.toFixed(1);
 };
 
-// image resolution switching function taken from this blog:
-// https://crystallize.com/blog/react-image-sizes-attribute-for-fast-ecommerce
-interface Variants {
-	url: string,
-	width: number
-}
-
-export const srcSetUtils = {
-
-	getSrcSet(variants: Variants[], path?: string) {
-		return (
-			variants
-				.map(variant => `${variant.url}${path} ${variant.width}w`)
-				.join(',')
-		);
-	},
-
-	backdropVariants: [
-		{
-			url: 'https://image.tmdb.org/t/p/w300/',
-			width: 400
-		},
-		{
-			url: 'https://image.tmdb.org/t/p/w780/',
-			width: 900
-		},
-		{
-			url: 'https://image.tmdb.org/t/p/w1280/',
-			width: 1400
-		},
-	],
-
-	posterVariants: [
-		{
-			url: 'https://image.tmdb.org/t/p/w342/',
-			width: 770
-		},
-		{
-			url: 'https://image.tmdb.org/t/p/w500/',
-			width: 1020
-		},
-	]
-};
-
 
 

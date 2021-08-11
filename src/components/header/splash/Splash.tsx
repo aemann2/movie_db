@@ -4,7 +4,10 @@ import splash from './images/splash.png';
 const Splash = () => {
 	return (
 		<div className='px-6'>
-			<img className='block w-full mx-auto max-w-7xl' src={splash_mobile} srcSet={`${splash} 768w`} alt='Theater seats' />
+			<picture className='block w-full mx-auto max-w-7xl'>
+				<source media="(min-width: 768px)" srcSet={splash} />
+				<img className='block w-full mx-auto max-w-7xl' src={splash_mobile} alt='Theater seats'/>
+			</picture>
 		</div>
 	);
 };
