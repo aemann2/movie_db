@@ -20,6 +20,3 @@ const ItemSplash = ({ backdrop_path }:IProps) => {
 };
 
 export default ItemSplash;
-
-
-{/* <img className='w-full' srcSet={src} src={backdropVariants[0].url} alt="splash" */}
