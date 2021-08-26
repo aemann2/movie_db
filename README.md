@@ -8,6 +8,8 @@ This was my first time using Typescript, so the time it took to create this app 
 
 I'd had lukewarm feelings about Tailwind before this, but now having used it in a React project I can see the value of not having to flip back and forth between stylesheets. I still think I prefer CSS given the choice, but I can definitely see why the framework is gaining in popularity. As for working with the API, I loved using SWR and now find it preferable to useEffect for RestAPI calls. No more debugging dependency arrays! And it makes pagination so easy.
 
+If you're interested in how close the final product is to my original sketch, you can download the Figma PDF [here](https://github.com/aemann2/movie_finder/files/7061963/Movie.DB.pdf).
+
 ## Technology:
 
 React, Tailwind, Typescript, SWR, Framer Motion, Context API w/ Hooks, Netlify
